@@ -1,0 +1,15 @@
+<MudDialog>
+    <DialogContent>
+        <MudImage Src="@ImageSrc" Style="width: 100%;" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cerrar</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [Parameter] public string ImageSrc { get; set; }
+
+    void Cancel() => MudDialog.Cancel();
+}

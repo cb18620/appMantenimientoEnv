@@ -1,0 +1,231 @@
+﻿@page "/Persona/GestionarPersona"
+@using Infraestructura.Models.Clasificador
+@using Infraestructura.Models.Parametricas
+@inherits MainBaseComponent
+@layout MainLayout
+@inject HttpClient HttpClient
+@inject IJSRuntime JSRuntime
+
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true">
+    <MudTabPanel Text="GESTION DE PERSONAL">
+
+        <div>
+            <MudCard>
+                <EditForm OnValidSubmit="OnValidPersonaNuevo" Model="_PersonaNuevo">
+                    <DataAnnotationsValidator />
+                    <MudCardContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="6" md="3">
+                                <MudTextField @bind-Value="_PersonaNuevo.Nombre" For="@(() => _PersonaNuevo.Nombre)" Label="NOMBRES" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="3">
+                                <MudTextField @bind-Value="_PersonaNuevo.Apellido" For="@(() => _PersonaNuevo.Apellido)" Label="APELLIDOS" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="3">
+                                <CustomAutoComplete TItem="GenClasificadorDto"
+                                                    jsonData="@jsonColor"
+                                                    NameValue="IdgenClasificador"
+                                                    NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_PersonaNuevo.Especialidad"
+                                                    pPlaceHolder="ESPECIALIDAD" />
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="3">
+                                <MudTextField @bind-Value="_PersonaNuevo.Telefono" For="@(() => _PersonaNuevo.Telefono)" Label="TELEFONO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="3">
+                                <MudTextField @bind-Value="_PersonaNuevo.Ci" For="@(() => _PersonaNuevo.Ci)" Label="CI" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="3">
+                                <MudTextField @bind-Value="_PersonaNuevo.Correo" For="@(() => _PersonaNuevo.Correo)" Label="CORREO" Variant="Variant.Outlined" Margin="Margin.Dense" oninput="validarCorreo(this)"></MudTextField>
+                            </MudItem>
+
+                            <MudItem xs="12" sm="6" md="3">
+                                <div class="d-flex flex-column" style="align-items:center">
+                                    <InputFile id="fileInput" OnChange="@((e) => OnFileChange(_PersonaNuevo, e))" hidden multiple accept=".jpg, .jpeg, .png" maxFileSize="5242880" />
+                                    <MudFab HtmlTag="label"
+                                            Color="Color.Secondary"
+                                            Icon="@Icons.Material.Filled.PhotoCamera"
+                                            Label="SUBIR FOTO"
+                                            for="fileInput">
+
+                                    </MudFab>
+                                </div>
+                            </MudItem>
+                        </MudGrid>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                    </MudCardActions>
+                </EditForm>
+            </MudCard>
+
+
+            <MudCard>
+
+
+                <MudTable Items="@persona" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                    <ToolBarContent>
+
+                        <MudSpacer />
+                        <MudTextField @bind-Value="searchString" Placeholder="Buscar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh>Nr</MudTh>
+                        <MudTh>NOMBRES</MudTh>
+                        <MudTh>APELLIDO</MudTh>
+                        <MudTh>ESPECIALIDAD</MudTh>
+                        <MudTh>TELEFONO</MudTh>
+                        <MudTh>CI</MudTh>
+                        <MudTh>CORREO</MudTh>
+                        <MudTh>FOTO</MudTh>
+
+                        <MudTh>Opciones</MudTh>
+                    </HeaderContent>
+
+                    <RowTemplate>
+                        <MudTd Style="width:40px">
+
+                            <MudLink Typo="Typo.caption">@context.Idpersonal</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Nombre</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Apellido</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Especialidades.Descripcion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Telefono</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Ci</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Correo</MudText><br />
+                        </MudTd>
+ 
+                        <MudTd>
+                            <MudText Typo="Typo.caption">
+                                <MudButton HtmlTag="label"
+                                           Variant="Variant.Filled" Color="Color.Primary"
+                                           StartIcon="@Icons.Filled.Wallpaper"
+                                           @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialogContext(context.Foto)))">
+                                    VER
+                                </MudButton>
+                            </MudText><br />
+                        </MudTd>
+                        <MudTd>
+
+                            <div class="d-flex">
+                                <div class="m-auto">
+
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.Idpersonal))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+
+                                    <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaPersona(context.Idpersonal))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+
+                                </div>
+                            </div>
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="5" style="padding:1px; margin:1px">
+
+
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.Idpersonal</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Nombre" Label="Nombres" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Apellido" Label="Apellidos" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Telefono" Label="Telefono" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Ci" Label="CI" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Correo" Label="Correo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Foto" Label="Foto" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditPersona(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEditCancelPersona(context.Idpersonal))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+
+                                </td>
+                            </MudTr>
+                        }
+                    </ChildRowContent>
+                </MudTable>
+
+            </MudCard>
+
+            <MudDialog FullWidth="true" @bind-IsVisible="visible" Options="dialogOptions">
+                <TitleContent>
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" Class="mr-3" /> Eliminar Persona
+                    </MudText>
+                </TitleContent>
+                <DialogContent>
+                    ¿Esta seguro de eliminar el registro?
+
+                </DialogContent>
+                <DialogActions>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Eliminar</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Cancelar</MudButton>
+                </DialogActions>
+            </MudDialog>
+
+        </div>
+
+
+    </MudTabPanel>
+</MudTabs>
+@code {
+    private void OpenImageDialog()
+    {
+        var parameters = new DialogParameters { ["ImageSrc"] = "data:image;base64," + _PersonaNuevo.Foto };
+        var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
+        DialogService.Show<PgDialog>($"Foto", parameters, options);
+    }
+    private void OpenImageDialogContext(string foto)
+    {
+        var parameters = new DialogParameters { ["ImageSrc"] = "data:image;base64," + foto };
+        var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
+        DialogService.Show<PgDialog>($"Foto", parameters, options);
+    }
+
+
+}
+

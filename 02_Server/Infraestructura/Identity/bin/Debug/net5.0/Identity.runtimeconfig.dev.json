@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\SERGIO - ENVIBOL\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages"
+    ]
+  }
+}

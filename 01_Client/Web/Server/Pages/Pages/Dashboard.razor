@@ -1,0 +1,52 @@
+﻿@page "/dashboard"
+@inherits MainLayout
+@layout MainLayout
+@using MudBlazor.Charts
+@using MudBlazor
+@using System.Net.Http
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.JSInterop
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardMedia Color="Color.Primary">
+                    <MudAvatar Image="https://i.ytimg.com/vi/q7s8txxBZtg/maxresdefault.jpg" Size="Size.Large"></MudAvatar>
+                </MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h4">Estado de las Máquinas</MudText>
+                    <MudText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary">Más detalles</MudButton>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardMedia Color="Color.Secondary">
+                    <MudAvatar Image="https://via.placeholder.com/150" Size="Size.Large"></MudAvatar>
+                </MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h4">Rendimiento de Producción</MudText>
+                    <MudText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Secondary">Más detalles</MudButton>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardMedia Color="Color.Tertiary">
+                    <MudAvatar Image="https://via.placeholder.com/150" Size="Size.Large"></MudAvatar>
+                </MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h4">Mantenimiento Programado</MudText>
+                    <MudText>Mantenimiento Preventivo</MudText>
+                    <MudText>Mantenimiento Correctivo</MudText>
+                    <MudText>Fichas Técnicas</MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Tertiary">Más detalles</MudButton>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudContainer>

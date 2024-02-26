@@ -1,0 +1,147 @@
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Persistencia.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Aplicacion.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Identity.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\bin\Debug\net5.0\Shared.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\Persistencia.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Infraestructura\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll

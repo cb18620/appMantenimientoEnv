@@ -1,0 +1,8 @@
+﻿:root {
+    --mud-palette-background: fuchsia;
+}
+
+/* O si necesitas que sea específicamente para el body */
+body {
+    background-color: fuchsia !important;
+}

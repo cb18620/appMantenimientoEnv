@@ -1,0 +1,215 @@
+﻿@page "/Clasificador/Parametricas"
+@using Infraestructura.Models.Clasificador
+
+@inherits MainBaseComponent
+@layout MainLayout
+
+
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true">
+    <MudTabPanel Text="ADMINISTRAR PARAMETROS GNERALES">
+        <div>
+            <MudCard>
+                <EditForm OnValidSubmit="OnValidGenClasificador" Model="_GenClasificador">
+                    <DataAnnotationsValidator />
+                    <MudCardContent>
+                        <MudGrid>
+
+                            <MudItem xs="12" sm="6" md="4">
+                                <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Tipo (*)</strong></MudText>
+                                <MudSelect Required="true" @bind-Value="_GenClasificador.IdgenClasificadortipo" For="@(() => _GenClasificador.IdgenClasificadortipo)" Variant="Variant.Outlined" Margin="Margin.Dense">
+                                    <MudSelectItem T="int" Disabled="true" Value="0">Seleccionar el tipo</MudSelectItem>
+                                    @if (clasificadortipo != null)
+                                    {
+                                        @foreach (var clas in clasificadortipo)
+                                        {
+
+
+                                            <MudSelectItem T="int" Value="@clas.IdgenClasificadortipo">@clas.Descripcion</MudSelectItem>
+
+
+                                        }
+                                    }
+
+                                </MudSelect>
+                            </MudItem>
+
+
+                            <MudItem xs="12" sm="6" md="4">
+
+                                <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Descripcion (*)</strong></MudText>
+                                <MudTextField Placeholder="Nombre del Clasificador" Required="true" @bind-Value="_GenClasificador.Descripcion" For="@(() => _GenClasificador.Descripcion)" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+
+                            <MudItem xs="12" sm="6" md="4">
+                                <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Valor 2 </strong></MudText>
+                                <MudTextField Placeholder="Valor opcional" @bind-Value="_GenClasificador.Valor2" For="@(() => _GenClasificador.Valor2)" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+
+
+
+                        </MudGrid>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudGrid>
+                            <MudItem Class="d-flex ml-auto">
+                                <div class="ml-">
+                                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                                </div>
+                            </MudItem>
+                        </MudGrid>
+                    </MudCardActions>
+                </EditForm>
+
+            </MudCard>
+            <MudCard>
+                <MudTable Items="@genClasificador" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                    <ToolBarContent>
+                        <MudSpacer />
+                        <MudTextField @bind-Value="searchString" Placeholder="Buscar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                    </ToolBarContent>
+
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.IdgenClasificador)" InitialDirection="MudBlazor.SortDirection.Descending">Nº</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.IdgenClasificadortipo)">Tipo</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Descripcion)">Descripcion</MudTableSortLabel></MudTh>
+                        @*<MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Valor2)">Valor 2</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Valor3)">Valor 3</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Valor4)"></MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Valor5)">Nro. Referencia</MudTableSortLabel></MudTh>*@
+                        @*<MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Otro)">Largo</MudTableSortLabel></MudTh>*@
+                        <MudTh>Opciones</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd Style="width:40px">
+                            <MudLink Typo="Typo.caption">@context.IdgenClasificador</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Tipo.Descripcion</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Descripcion</MudLink><br />
+                        </MudTd>
+                        @* <MudTd>
+                        <MudLink Typo="Typo.caption">@context.Valor2</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                        <MudLink Typo="Typo.caption">@context.Valor3</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                        <MudLink Typo="Typo.caption">@context.Valor4</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                        <MudLink Typo="Typo.caption">@context.Valor5</MudLink><br />
+                        </MudTd>*@
+                        @*                        <MudTd>
+                        <MudLink Typo="Typo.caption">@context.Otro</MudLink><br />
+                        </MudTd>*@
+
+                        <MudTd>
+                            <div class="d-flex">
+                                <div class="m-auto">
+
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.IdgenClasificador))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+
+                                    <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaClasificador(context.IdgenClasificador))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+                                    
+
+
+                                </div>
+                            </div>
+                        </MudTd>
+
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="9" style="padding:1px; margin:1px">
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.IdgenClasificador</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+
+
+                                                <MudItem xs="12" sm="6" md="3">
+                                                    <MudTextField @bind-Value="context.IdgenClasificadortipo" Label="tipo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+
+                                                <MudItem xs="12" sm="6" md="3">
+                                                    <MudTextField @bind-Value="context.Descripcion" Label="Descripcion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+
+                                                @*<MudItem xs="12" sm="6" md="3">
+                                            <MudTextField @bind-Value="context.Valor2" Label="Valor2" Variant="Variant.Text"></MudTextField>
+                                            </MudItem>
+
+                                            <MudItem xs="12" sm="6" md="3">
+                                            <MudTextField @bind-Value="context.Valor3" Label="valor3" Variant="Variant.Text"></MudTextField>
+                                            </MudItem>
+
+                                            <MudItem xs="12" sm="6" md="3">
+                                            <MudTextField @bind-Value="context.Valor4" Label="Valor4" Variant="Variant.Text"></MudTextField>
+                                            </MudItem>
+
+                                            <MudItem xs="12" sm="6" md="3">
+                                            <MudTextField @bind-Value="context.Valor5" Label="Valor5" Variant="Variant.Text"></MudTextField>
+                                            </MudItem>
+
+                                            <MudItem xs="12" sm="6" md="3">
+                                            <MudTextField @bind-Value="context.Otro" Label="Otro" Variant="Variant.Text"></MudTextField>
+                                            </MudItem>*@
+
+
+                                            </MudGrid>
+                                        </MudCardContent>
+
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditClasificador(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEditCancelClasificador(context.IdgenClasificador))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+                                </td>
+                            </MudTr>
+                        }
+
+                    </ChildRowContent>
+
+                </MudTable>
+            </MudCard>
+            <MudDialog FullWidth="true" @bind-IsVisible="visible" Options="dialogOptions">
+                <TitleContent>
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" Class="mr-3" /> Eliminar
+                    </MudText>
+                </TitleContent>
+                <DialogContent>
+                    ¿Esta seguro de eliminar el registro?
+
+                </DialogContent>
+                <DialogActions>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Eliminar</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Cancelar</MudButton>
+                </DialogActions>
+            </MudDialog>
+        </div>
+    </MudTabPanel>
+</MudTabs>
+

@@ -1,0 +1,84 @@
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll

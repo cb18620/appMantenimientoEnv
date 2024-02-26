@@ -1,0 +1,938 @@
+﻿@page "/Maquinarias/maquinas"
+@inherits MainBaseComponent
+@layout MainLayout
+@using Aplicacion.DTOs.Maquinaria
+@using Infraestructura.Models
+@using Infraestructura.Models.Clasificador
+@using Infraestructura.Models.Maquinaria
+@using Syncfusion.Blazor.Popups
+@inject IJSRuntime JSRuntime
+
+<MudTabs Elevation="4" Rounded="true" Color="@Color.Dark" PrevIcon="@Icons.Material.Filled.SkipPrevious" NextIcon="@Icons.Material.Filled.SkipNext">
+    <MudTabPanel Text="REGISTRO DE MAQUINARIA" Icon="@Icons.Material.Filled.Build">
+
+        <div>
+            <MudCard>
+                <EditForm OnValidSubmit="OnValidMaquinariaNuevo" Model="_maquinarianuevo">
+                    <DataAnnotationsValidator />
+                    <MudCardContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="6" md="2">
+                                <CustomAutoComplete TItem="GenClasificadorDto"
+                                                    jsonData="@jsonTipoMaquina"
+                                                    NameValue="IdgenClasificador"
+                                                    NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maquinarianuevo.Tipo"
+                                                    pPlaceHolder="SECCION" />
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.NombreMaquina" For="@(() => _maquinarianuevo.NombreMaquina)" Label="EQUIPO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <CustomAutoComplete TItem="GenClasificadorDto"
+                                                    jsonData="@jsonColor"
+                                                    NameValue="IdgenClasificador"
+                                                    NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maquinarianuevo.Area"
+                                                    pPlaceHolder="SUPERVISIÓN" />
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <CustomAutoComplete TItem="GenClasificadorDto"
+                                                    jsonData="@jsonProceso"
+                                                    NameValue="IdgenClasificador"
+                                                    NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maquinarianuevo.Proceso"
+                                                    pPlaceHolder="PROCESO" />
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Identificador" For="@(() => _maquinarianuevo.Identificador)" Label="CODIGO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            @*  <MudItem xs="12" sm="6" md="2">
+                            <MudTextField @bind-Value="_maquinarianuevo.Descripcion" For="@(() => _maquinarianuevo.Descripcion)" Label="DESCRIPCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem> *@
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Funcion" For="@(() => _maquinarianuevo.Funcion)" Label="FUNCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Marca" For="@(() => _maquinarianuevo.Marca)" Label="MARCA" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Modelo" For="@(() => _maquinarianuevo.Modelo)" Label="MODELO/TIPO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.NSerie" For="@(() => _maquinarianuevo.NSerie)" Label="N° SERIE" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Año" For="@(() => _maquinarianuevo.Año)" Label="AÑO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            @*
+                            <MudItem xs="12" sm="6" md="2">
+                            <MudTextField @bind-Value="_maquinarianuevo.Fabricante" For="@(() => _maquinarianuevo.Fabricante)" Label="FABRICANTE" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem> *@
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Industria" For="@(() => _maquinarianuevo.Industria)" Label="INDUSTRIA" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Proveedor" For="@(() => _maquinarianuevo.Proveedor)" Label="PROVEEDOR" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            @*   <MudItem xs="12" sm="6" md="2">
+                            <MudTextField @bind-Value="_maquinarianuevo.Origen" For="@(() => _maquinarianuevo.Origen)" Label="ORIGEN" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem> *@
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudTextField @bind-Value="_maquinarianuevo.Ubicacion" For="@(() => _maquinarianuevo.Ubicacion)" Label="UBICACION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
+                            @*  <MudItem xs="12" sm="6" md="2">
+                            <MudTextField @bind-Value="_maquinarianuevo.Caracteristicas" For="@(() => _maquinarianuevo.Caracteristicas)" Label="CARACTERISTICAS" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem> *@
+
+                            <MudItem xs="12" sm="6" md="2">
+                                <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Foto</strong></MudText>
+                                <div class="d-flex align-items-center w-100">
+                                    <InputFile id="fileInput" OnChange="@((e) => OnFileChange(_maquinarianuevo, e))" hidden multiple accept=".jpg, .jpeg, .png" maxFileSize="5242880" />
+                                    <MudButton HtmlTag="label" EndIcon="@Icons.Material.Filled.PhotoCamera" Color="Color.Primary" Variant="Variant.Outlined" for="fileInput" FullWidth="true">
+                                        SUBIR FOTO
+                                    </MudButton>
+
+                                    @if (!string.IsNullOrEmpty(ImageBase64))
+                                    {
+                                        <img src="@ImageBase64" alt="Vista previa" style="max-width: 100px; margin-left: 10px;" />
+                                    }
+                                </div>
+                            </MudItem>
+
+
+
+                        </MudGrid>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="MudBlazor.ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                    </MudCardActions>
+                </EditForm>
+            </MudCard>
+
+
+            <MudCard>
+
+
+                <MudTable Items="@maquinaria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                    <ToolBarContent>
+
+                        <MudSpacer />
+                        <MudTextField @bind-Value="searchString" Placeholder="Buscar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.Idmaquinaria)">N°</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.Tipo)">Tipo</MudTableSortLabel></MudTh>
+                        <MudTd>Equipo</MudTd>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.Area)">Area</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.Proceso)">Proceso</MudTableSortLabel></MudTh>
+                        <MudTd>Identificador</MudTd>
+                        <MudTd>Modelo</MudTd>
+                        <MudTd>Ubicacion</MudTd>
+                        <MudTd>Foto</MudTd>
+                        <MudTh class="sobreponer">  Opciones</MudTh>
+                    </HeaderContent>
+
+                    <RowTemplate>
+
+
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Tipos.Descripcion</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.NombreMaquina</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Areas.Descripcion</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Identificador</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Modelo</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Ubicacion</MudText><br />
+                            </MudTd>
+                            <MudTd>
+                                <MudText Typo="Typo.caption">@context.Descripcion</MudText><br />
+                            </MudTd>
+
+
+                            <MudTd>
+                                <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
+                            </MudTd>
+
+                            <MudTd class="sobreponer">
+
+                                <div class="d-flex">
+                                    <div class="m-auto">
+                                        <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                        </MudTooltip>
+
+                                        <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaPersona(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                        </MudTooltip>
+
+                                        <MudTooltip Text="Agregar Detalle" Color="Color.Success" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Success" Variant="Variant.Filled" Icon="@Icons.Material.Filled.AddBox" Size="Size.Small" OnClick="@(() => ShowBtnadd(context, context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                        </MudTooltip>
+                                        <MudTooltip Text="Agregar Elemento" Color="Color.Warning" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.MiscellaneousServices" Size="Size.Small" OnClick="@(() => ShowBtnaddElementoAsync(context.Idmaquinaria))" />
+                                            <MudText Typo="Typo.caption"></MudText>
+                                        </MudTooltip>
+                                        <MudTooltip Text="Imprimir" Color="Color.Default" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => Reporte())" /><MudText Typo="Typo.caption"></MudText>
+                                        </MudTooltip>
+
+
+
+                                    </div>
+                                </div>
+                            </MudTd>
+                        </RowTemplate>
+                        <PagerContent>
+                            <MudTablePager />
+                        </PagerContent>
+                        <ChildRowContent>
+                            @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="5" style="padding:1px; margin:1px">
+
+
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.Idmaquinaria</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Descripcion" Label="Descripcion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Modelo" Label="Modelo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Identificador" Label="Identificador" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Caracteristicas" Label="caracteristicas" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Marca" Label="Marca" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Ubicacion" Label="Ubicacion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Foto</strong></MudText>
+                                                    <div class="mud-input-control mud-text-field-outlined" style="width: 100%; display: flex; align-items: center;">
+                                                        <InputFile id="editFileInput" OnChange="@((e) => OnFileChange(context, e))" hidden multiple accept=".jpg, .jpeg, .png" maxFileSize="5242880" />
+                                                        <MudButton HtmlTag="label" EndIcon="@Icons.Material.Filled.PhotoCamera" Color="Color.Primary" Variant="Variant.Text" for="editFileInput" FullWidth="true">
+                                                            SUBIR LOGO
+                                                        </MudButton>
+                                                        <div class="mud-text-field-ripple"></div>
+                                                        <div class="mud-text-field-helper-text"></div>
+                                                    </div>
+                                                </MudItem>
+
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditPersona(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEditCancelPersona(context.Idmaquinaria))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+
+                                </td>
+                            </MudTr>
+                        }
+                    </ChildRowContent>
+                </MudTable>
+
+            </MudCard>
+
+            <MudDialog FullWidth="true" @bind-IsVisible="visible" Options="dialogOptions">
+                <TitleContent>
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" Class="mr-3" /> Eliminar Persona
+                    </MudText>
+                </TitleContent>
+                <DialogContent>
+                    ¿Esta seguro de eliminar el registro?
+
+                </DialogContent>
+                <DialogActions>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Eliminar</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Cancelar</MudButton>
+                </DialogActions>
+            </MudDialog>
+
+        </div>
+        @*AQUI AGREGAMOS EL DETALLE*@
+        @*  DESDE AQUI
+        EMPIEZA
+        EL DETALLE DE
+        MAQUINARIA VEHICULOS VEHICULOS VEHICULOS VEHICULOS VEHICULOS VEHICULOS *@
+
+        <div>
+            <SfDialog Target="#target" ZIndex="999" Width="60%" Height="90%" AllowDragging="true" IsModal="true" CloseOnEscape="false" Visible="@popupAdmView">
+
+
+                <DialogTemplates>
+                    <Header><strong>@_TituloPopup2 </strong> <strong>@_TituloPopup</strong></Header>
+                    <Content>
+                        <MudCardContent>
+                            <MudDivider></MudDivider>
+                            <br />
+                            <div>
+                                @if (_maquinariaSeleccionada.Tipo == 14)
+                                {
+                                    <MudCard>
+                                        <EditForm OnValidSubmit="onTablaAsyncVehiculoDetalle" Model="_maqCaractVehiculo">
+                                            <DataAnnotationsValidator />
+
+                                            <MudCardContent>
+                                                <MudGrid>
+
+
+
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Puertas" For="@(() => _maqCaractVehiculo.Puertas)" Label="Puertas" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Traccion" For="@(() => _maqCaractVehiculo.Traccion)" Label="Traccion" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Ruedas" For="@(() => _maqCaractVehiculo.Ruedas)" Label="Ruedas" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Cilindros" For="@(() => _maqCaractVehiculo.Cilindros)" Label="Cilindros" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Direccion" For="@(() => _maqCaractVehiculo.Direccion)" Label="Direccion" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Transmision" For="@(() => _maqCaractVehiculo.Transmision)" Label="Transmision" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Conbustible" For="@(() => _maqCaractVehiculo.Conbustible)" Label="Conbustible" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Potencia" For="@(() => _maqCaractVehiculo.Potencia)" Label="Potencia" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Motor" For="@(() => _maqCaractVehiculo.Motor)" Label="Motor" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractVehiculo.Capacidad" For="@(() => _maqCaractVehiculo.Capacidad)" Label="Capacidad" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                </MudGrid>
+                                            </MudCardContent>
+                                            <MudCardActions>
+
+                                                <MudButton OnClick="@(() => SaveVehiculoDetalle())" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                                            </MudCardActions>
+                                        </EditForm>
+                                    </MudCard>
+
+                                    <MudCard>
+                                        <MudTable Items="@listadetalles" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<MaqCaractVehiculoDto,bool>(FilterFunc2)">
+
+                                            <HeaderContent>
+                                                <MudTh>Nº</MudTh>
+                                                <MudTh>Puertas</MudTh>
+                                                <MudTh>Traccion</MudTh>
+                                                <MudTh>Ruedas</MudTh>
+                                                <MudTh>Cilindros</MudTh>
+                                                <MudTh>Direccion</MudTh>
+                                                <MudTh>Transmision</MudTh>
+                                                <MudTh>Conbustible</MudTh>
+                                                <MudTh>Potencia</MudTh>
+                                                <MudTh>Motor</MudTh>
+                                                <MudTh>Capacidad</MudTh>
+                                                <MudTh>Opciones</MudTh>
+
+                                            </HeaderContent>
+
+                                            <RowTemplate>
+
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.IdmaqCaractVehiculo</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Traccion</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Ruedas</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Cilindros</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Direccion</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Transmision</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Conbustible</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Motor</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Capacidad</MudText><br />
+                                                    </MudTd>
+
+
+                                                    <MudTd>
+                                                        <div class="d-flex">
+                                                            <div class="ml-auto">
+                                                                <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                                                    <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
+                                                                </MudTooltip>
+
+                                                                <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                    <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalle(context.IdmaqCaractVehiculo))" /><MudText Typo="Typo.caption"></MudText>
+                                                                </MudTooltip>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </MudTd>
+                                                </RowTemplate>
+                                                <PagerContent>
+                                                    <MudTablePager />
+                                                </PagerContent>
+                                                <ChildRowContent>
+                                                    @if (context.VerDetalle)
+                                                {
+                                                    <MudTr>
+                                                        <td colspan="11" style="padding:1px; margin:15px">
+
+
+                                                            <MudCard>
+                                                                <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                                                    <CardHeaderContent>
+                                                                        <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.IdmaqCaractVehiculo</strong></MudText>
+                                                                    </CardHeaderContent>
+                                                                </MudCardHeader>
+                                                                <MudCardContent Class="pa-2">
+                                                                    <MudGrid>
+
+                                                                        <MudItem xs="3" sm="3">
+                                                                            <MudTextField @bind-Value="context.Puertas" Label="Puertas" Variant="Variant.Outlined" Margin="Margin.Dense" InputType="InputType.Time"></MudTextField>
+                                                                        </MudItem>
+                                                                    </MudGrid>
+                                                                </MudCardContent>
+                                                                <MudCardActions>
+                                                                    <MudGrid>
+                                                                        <MudItem Class="d-flex ml-auto">
+                                                                            <div class="ml-2">
+                                                                                <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditHorExtracciondetalle(context))">Guardar</MudButton>
+                                                                                <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit1(context.IdmaqCaractVehiculo))">Cancelar</MudButton>
+                                                                            </div>
+                                                                        </MudItem>
+                                                                    </MudGrid>
+                                                                </MudCardActions>
+                                                            </MudCard>
+
+                                                        </td>
+                                                    </MudTr>
+                                                }
+                                            </ChildRowContent>
+                                        </MudTable>
+                                    </MudCard>
+
+
+                                }
+                            </div>
+
+
+
+                            @*  DESDE AQUI
+                            EMPIEZA
+                            EL DETALLE DE
+                            MAQUINARIA MAQUINARIA MAQUINARIA MAQUINARIA   MAQUINARIA MAQUINARIA MAQUINARIA MAQUINARIA MAQUINARIA MAQUINARIA*@
+
+
+
+                            <div>
+                                @if (_maquinariaSeleccionada.Tipo == 13)
+                                {
+                                    <MudCard>
+                                        <EditForm OnValidSubmit="onTablaAsyncmaquinariaDetalle" Model="_maqCaractMaquinaria">
+                                            <DataAnnotationsValidator />
+
+                                            <MudCardContent>
+                                                <MudGrid>
+
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Tension" For="@(() => _maqCaractMaquinaria.Tension)" Label="Tension" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Corriente" For="@(() => _maqCaractMaquinaria.Corriente)" Label="Corriente" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Frecuencia" For="@(() => _maqCaractMaquinaria.Frecuencia)" Label="Frecuencia" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Controlado" For="@(() => _maqCaractMaquinaria.Controlado)" Label="Controlado" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Rpm" For="@(() => _maqCaractMaquinaria.Rpm)" Label="Rpm" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Temperatura" For="@(() => _maqCaractMaquinaria.Temperatura)" Label="Temperatura" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Caudal" For="@(() => _maqCaractMaquinaria.Caudal)" Label="Presion" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Presion" For="@(() => _maqCaractMaquinaria.Presion)" Label="Presion" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Vibracion" For="@(() => _maqCaractMaquinaria.Vibracion)" Label="Vibracion" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Espesor" For="@(() => _maqCaractMaquinaria.Espesor)" Label="Espesor" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.Potencia" For="@(() => _maqCaractMaquinaria.Potencia)" Label="Potencia" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="2">
+                                                        <MudTextField @bind-Value="_maqCaractMaquinaria.FactorPotencia" For="@(() => _maqCaractMaquinaria.FactorPotencia)" Label="Factor Potenc." Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                </MudGrid>
+                                            </MudCardContent>
+                                            <MudCardActions>
+
+                                                <MudButton OnClick="@(() => SaveMaquinariaDetalle())" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                                            </MudCardActions>
+                                        </EditForm>
+                                    </MudCard>
+
+                                    <MudCard>
+                                        <MudTable Items="@listadetallesMaquinaria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+
+                                            <HeaderContent>
+                                                <MudTh>Nº</MudTh>
+                                                <MudTh>Tension</MudTh>
+                                                <MudTh>Corriente</MudTh>
+                                                <MudTh>Frecuencia</MudTh>
+                                                <MudTh>Controlado</MudTh>
+                                                <MudTh>Rpm</MudTh>
+                                                <MudTh>Temperatura</MudTh>
+                                                <MudTh>Caudal</MudTh>
+                                                <MudTh>Presion</MudTh>
+                                                <MudTh>Vibracion</MudTh>
+                                                <MudTh>Espesor</MudTh>
+                                                <MudTh>Potencia</MudTh>
+                                                <MudTh>Opciones</MudTh>
+
+                                            </HeaderContent>
+
+                                            <RowTemplate>
+
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.IdmaqCaractMaquinaria</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Tension</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Corriente</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Frecuencia</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Controlado</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Rpm</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Temperatura</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Caudal</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Presion</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Vibracion</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Espesor</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
+                                                    </MudTd>
+
+
+                                                    @* <MudTd>
+                                            <div class="d-flex">
+                                            <div class="ml-auto">
+                                            <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
+                                            </MudTooltip>
+
+                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                            <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalle(context.IdmaqCaractVehiculo))" /><MudText Typo="Typo.caption"></MudText>
+                                            </MudTooltip>
+
+
+
+                                            </div>
+                                            </div>
+                                            </MudTd>*@
+                                                </RowTemplate>
+                                                <PagerContent>
+                                                    <MudTablePager />
+                                                </PagerContent>
+                                                <ChildRowContent>
+                                                    @if (context.VerDetalle)
+                                                {
+                                                    <MudTr>
+                                                        <td colspan="11" style="padding:1px; margin:15px">
+
+
+                                                            <MudCard>
+                                                                <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                                                    <CardHeaderContent>
+                                                                        <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.</strong></MudText>
+                                                                    </CardHeaderContent>
+                                                                </MudCardHeader>
+                                                                <MudCardContent Class="pa-2">
+                                                                    <MudGrid>
+
+                                                                        <MudItem xs="3" sm="3">
+                                                                            <MudTextField @bind-Value="context.Tension" Label="Tension" Variant="Variant.Outlined" Margin="Margin.Dense" InputType="InputType.Time"></MudTextField>
+                                                                        </MudItem>
+                                                                    </MudGrid>
+                                                                </MudCardContent>
+                                                                <MudCardActions>
+                                                                    <MudGrid>
+                                                                        <MudItem Class="d-flex ml-auto">
+                                                                            <div class="ml-2">
+                                                                                <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditHorExtracciondetalle(context))">Guardar</MudButton>
+                                                                                <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit1(context.IdmaqCaractMaquinaria))">Cancelar</MudButton>
+                                                                            </div>
+                                                                        </MudItem>
+                                                                    </MudGrid>
+                                                                </MudCardActions>
+                                                            </MudCard>
+
+                                                        </td>
+                                                    </MudTr>
+                                                }
+                                            </ChildRowContent>
+                                        </MudTable>
+                                    </MudCard>
+
+
+                                }
+                            </div>
+
+
+                            @*  DESDE AQUI
+                            EMPIEZA
+                            EL DETALLE DE
+                            INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA    MAQUINARIA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA INFRAESTRUCTURA *@
+
+                            <div>
+                                @if (_maquinariaSeleccionada.Tipo == 15)
+                                {
+                                    <MudCard>
+                                        <EditForm OnValidSubmit="onTablaAsynCInfraestructuraDetalle" Model="_maqCaractInfra">
+                                            <DataAnnotationsValidator />
+
+                                            <MudCardContent>
+                                                <MudGrid>
+
+
+
+
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Puertas" For="@(() => _maqCaractInfra.Puertas)" Label="Puertas" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Ventanas" For="@(() => _maqCaractInfra.Ventanas)" Label="Ventanas" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Luminarias" For="@(() => _maqCaractInfra.Luminarias)" Label="Luminarias" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    @*<MudItem xs="12" sm="6" md="3">
+                                                <MudTextField @bind-Value="_maqCaractInfra.Idmaquinaria" For="@(() => _maqCaractInfra.Idmaquinaria)" Label="idmaquina" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                </MudItem>*@
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Tomas" For="@(() => _maqCaractInfra.Tomas)" Label="Tomas" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Largo" For="@(() => _maqCaractInfra.Largo)" Label="largo" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Ancho" For="@(() => _maqCaractInfra.Ancho)" Label="Ancho" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                    <MudItem xs="12" sm="6" md="3">
+                                                        <MudTextField @bind-Value="_maqCaractInfra.Altura" For="@(() => _maqCaractInfra.Altura)" Label="Altura" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                                    </MudItem>
+                                                </MudGrid>
+                                            </MudCardContent>
+                                            <MudCardActions>
+
+                                                <MudButton OnClick="@(() => SaveInfraestructuraDetalle())" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                                            </MudCardActions>
+                                        </EditForm>
+                                    </MudCard>
+
+                                    <MudCard>
+                                        <MudTable Items="@listadetallesInfra" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped2">
+
+                                            <HeaderContent>
+                                                <MudTh>Nº</MudTh>
+                                                <MudTh>Puertas</MudTh>
+                                                <MudTh>Ventanas</MudTh>
+                                                <MudTh>Luminarias</MudTh>
+                                                <MudTh>Tomas</MudTh>
+                                                <MudTh>Largo</MudTh>
+                                                <MudTh>Ancho</MudTh>
+                                                <MudTh>Altura</MudTh>
+                                                <MudTh>Opciones</MudTh>
+
+                                            </HeaderContent>
+
+                                            <RowTemplate>
+
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.IdmaqCaractInfra</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Ventanas</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Luminarias</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Tomas</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Largo</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Ancho</MudText><br />
+                                                    </MudTd>
+                                                    <MudTd>
+                                                        <MudText Typo="Typo.caption">@context.Altura</MudText><br />
+                                                    </MudTd>
+
+                                                    <MudTd>
+                                                        <div class="d-flex">
+                                                            <div class="ml-auto">
+                                                                <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                                                    <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
+                                                                </MudTooltip>
+
+                                                                <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                    <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalleInfra(context.IdmaqCaractInfra))" /><MudText Typo="Typo.caption"></MudText>
+                                                                </MudTooltip>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </MudTd>
+                                                </RowTemplate>
+                                                <PagerContent>
+                                                    <MudTablePager />
+                                                </PagerContent>
+                                                <ChildRowContent>
+                                                    @if (context.VerDetalle)
+                                                {
+                                                    <MudTr>
+                                                        <td colspan="11" style="padding:1px; margin:15px">
+
+
+                                                            <MudCard>
+                                                                <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                                                    <CardHeaderContent>
+                                                                        <MudText Typo="Typo.caption"><strong>Registro Infraestructura Nro.:@context.IdmaqCaractInfra</strong></MudText>
+                                                                    </CardHeaderContent>
+                                                                </MudCardHeader>
+                                                                <MudCardContent Class="pa-2">
+                                                                    <MudGrid>
+
+                                                                        <MudItem xs="3" sm="3">
+                                                                            <MudTextField @bind-Value="context.Puertas" Label="Puertas" Variant="Variant.Outlined" Margin="Margin.Dense" InputType="InputType.Time"></MudTextField>
+                                                                        </MudItem>
+                                                                    </MudGrid>
+                                                                </MudCardContent>
+                                                                @*   <MudCardActions>
+                                                        <MudGrid>
+                                                        <MudItem Class="d-flex ml-auto">
+                                                        <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditHorExtracciondetalle(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit1(context.IdmaqCaractVehiculo))">Cancelar</MudButton>
+                                                        </div>
+                                                        </MudItem>
+                                                        </MudGrid>
+                                                        </MudCardActions>*@
+                                                            </MudCard>
+
+                                                        </td>
+                                                    </MudTr>
+                                                }
+                                            </ChildRowContent>
+                                        </MudTable>
+                                    </MudCard>
+
+
+                                }
+                            </div>
+
+
+                        </MudCardContent>
+                    </Content>
+                </DialogTemplates>
+                <DialogButtons>
+
+                    <DialogButton Content="CERRAR" OnClick="@btnCancelPop" />
+                </DialogButtons>
+
+
+
+
+
+
+
+
+
+            </SfDialog>
+        </div>
+        <div>
+            <SfDialog Target="#target" ZIndex="999" Width="60%" Height="90%" AllowDragging="true" IsModal="true" style="min-height: 90%" CloseOnEscape="false" @bind-Visible="@popupAdmView1">
+                <DialogTemplates>
+                    <Header><strong>@_TituloPopup2 </strong> <strong>@_TituloPopup</strong></Header>
+                    <Content>
+                        <MudCardContent>
+                            <div>
+                                <MudCard>
+                                    <MudTable Items="@listadetallesMaqMaquinariaElemento" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                                        <HeaderContent>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.IdmaquinaElemento)">Nr</MudTableSortLabel></MudTh>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.Idmaquinaria)">Idmaq</MudTableSortLabel></MudTh>
+                                             <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.Idelemento)">Idelement</MudTableSortLabel></MudTh>
+                                            <MudTh>Opciones</MudTh>
+                                        </HeaderContent>
+                                        <RowTemplate>
+						<MudTd Style="width:40px">
+                                                <MudText Typo="Typo.caption">@context.IdmaquinaElemento</MudText><br />
+                            </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Idelemento</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <div class="d-flex">
+                                                        <div class="ml-auto">
+
+                                                            <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit"/><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete"/><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+                                                            <MudTooltip Text="Detalle" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Tertiary" Variant="Variant.Filled" Icon="@Icons.Material.Filled.AddBox" />
+                                                                <MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+                                                        </div>
+                                                    </div>
+                                                </MudTd>
+                            </RowTemplate>
+                                    </MudTable>
+                                </MudCard>
+                            </div>
+                        </MudCardContent>
+                    </Content>
+                </DialogTemplates>
+                    <DialogButtons>
+
+                        <DialogButton Content="CANCELAR" OnClick="@btnCancelPop1" />
+                    </DialogButtons>
+            </SfDialog>
+        </div>
+
+        @*AQUI TERMINA
+        EL DETALLE
+        DE COTIZACION *@
+        @* TERMINA AGREGAR DETALLE*@
+    </MudTabPanel>
+    <MudTabPanel Text="Analisis RCM">
+
+    </MudTabPanel>
+</MudTabs>
+
+<style>
+    .sobreponer {
+        position: sticky;
+        right: 0;
+        z-index: 1;
+        background-color: white;
+    }
+
+        .sobreponer .d-flex {
+            justify-content: flex-end;
+        }
+
+        .sobreponer .m-auto {
+            text-align: right;
+        }
+</style>
+
+@code {
+    private void OpenImageDialog(string foto)
+    {
+        var parameters = new DialogParameters { ["ImageSrc"] = "data:image;base64," + _maquinarianuevo.FotoEquipo };
+        var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
+        DialogService.Show<PgDialog>($"Foto Equipo", parameters, options);
+    }
+    private void OpenImageDialogContext(string foto)
+    {
+        var parameters = new DialogParameters { ["ImageSrc"] = "data:image;base64," + foto };
+        var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
+        DialogService.Show<PgDialog>($"Foto Equipo", parameters, options);
+    }
+
+
+}

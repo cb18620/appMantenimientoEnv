@@ -1,0 +1,115 @@
+﻿@page "/Maquinaria/elemento"
+@inherits MainBaseComponent
+@layout MainLayout
+@inject IJSRuntime JSRuntime
+
+
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true">
+
+    <MudTabPanel Text="GESTION DE ELEMENTOS ">
+        <div>
+            <MudCard>
+                <EditForm OnValidSubmit="OnValidElementoNuevo" Model="_maqElemento">
+                <DataAnnotationsValidator />
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="12" sm="6" md="4">
+                                <MudTextField @bind-Value="_maqElemento.Descripcion" For="@(() => _maqElemento.Descripcion)" Label="DESCRIPCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                        </MudItem> <MudItem xs="12" sm="6" md="4">
+                                <MudTextField @bind-Value="_maqElemento.Funcion" For="@(() => _maqElemento.Funcion)" Label="FUNCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                        </MudItem>
+                    </MudGrid>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Success">Guardar</MudButton>
+                </MudCardActions>
+                </EditForm>
+            </MudCard>
+            <MudCard>
+                <MudTable Items="@maqElementos" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                    <HeaderContent>
+                        <MudTh>Nr</MudTh>
+                        <MudTh>Descripcion</MudTh>
+                        <MudTh>Funcion</MudTh>
+                        <MudTh>Opciones</MudTh>
+                    </HeaderContent>
+
+                    <RowTemplate>
+                        <MudTd Style="width:40px">
+
+                            <MudLink Typo="Typo.caption">@context.Idelemento</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Descripcion</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Funcion</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+
+                            <div class="d-flex">
+                                <div class="m-auto">
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.Idelemento))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+                                    <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarElemento(context.Idelemento))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+
+
+
+
+                                </div>
+                            </div>
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="5" style="padding:1px; margin:1px">
+
+
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.Idelemento</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Descripcion" Label="Descripcion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Funcion" Label="Funcion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditElemento(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit(context.Idelemento))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+
+                                </td>
+                            </MudTr>
+                        }
+                    </ChildRowContent>
+                </MudTable>
+            </MudCard>
+        </div>
+    </MudTabPanel>
+
+</MudTabs>
+

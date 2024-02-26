@@ -1,0 +1,113 @@
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\Usuario\Desktop\SourceCodeCleanArchi\SolServer\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+D:\SourceSedemCleanArq\source_pruebas_sedem\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CopyComplete
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\USUARIO\Downloads\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CopyComplete
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\PC\source\repos\APPMANTENV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CopyComplete
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\PC\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CopyComplete
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiV\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\bin\Debug\net6.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.Resources.Pages.Autentication.Resource.resources
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.GenerateResource.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.csproj.CopyComplete
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\refint\Infraestructura.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\Infraestructura.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\01_Client\Web\Infraestructura\obj\Debug\net6.0\ref\Infraestructura.dll

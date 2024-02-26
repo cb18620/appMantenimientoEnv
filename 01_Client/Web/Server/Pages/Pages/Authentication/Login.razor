@@ -1,0 +1,89 @@
+﻿@page "/"
+@page "/pages/authentication/login"
+@layout LoginLayout
+@inherits MainBaseComponent
+
+@attribute [AllowAnonymous]
+@inject IStringLocalizer<Resources.Pages.Authentication.Login.Resource> localizer
+@inject IManagerAuthorize _LoginService
+
+
+<EditForm Model="@_tokenModel" OnValidSubmit="SubmitAsync">
+    <FluentValidationValidator @ref="_fluentValidationValidator" DisableAssemblyScanning="@true" />
+    <MudGrid>
+        <DataAnnotationsValidator />
+        <MudItem xs="12" sm="7">
+            <MudItem xs="12" Class="pt-0 pr-7 pl-7">
+
+                <MudItem xs="12" Class="d-flex justify-center mb-0">
+                    <MudPaper Class="pa-4 ma-1  rounded-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#0F6751" width="98px" height="48px" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 4v3h2V4h10v3h2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2zM4 8v2h16V8h-2v3H6V8H4zm2 5v5h2v-5H6zm5 0v5h2v-5h-2zm5 0v5h2v-5h-2z" />
+                        </svg>
+                    </MudPaper>
+                </MudItem>
+
+
+                <MudItem xs="12" Class="mb-0 pa-0">
+                    <MudTextField T="string"
+                                  Label="@localizer["Usuario"]"
+                                  Variant="Variant.Text"
+                                  Margin="Margin.None"
+                                  @bind-Value="_tokenModel.UserName"
+                                  For="@(() => _tokenModel.UserName)"
+                                  Class="mb-1 pa-0" />
+                </MudItem>
+
+                <MudItem xs="12" Class="mb-0">
+                    <MudTextField T="string"
+                                  Label="@localizer["Password"]"
+                                  Variant="Variant.Text"
+                                  @bind-Value="_tokenModel.Password"
+                                  For="@(() => _tokenModel.Password)"
+                                  InputType="@PasswordInput"
+                                  Class="mb-0 pa-0"
+                                  Adornment="Adornment.End"
+                                  AdornmentIcon="@PasswordInputIcon"
+                                  OnAdornmentClick="TogglePasswordVisibility" />
+                </MudItem>
+                @code {
+        string myColor = "#0F6751";
+                }
+                <MudItem xs="12" Class="d-flex justify-center mt-4 mb-4 pa-2">
+                   
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled"
+                               Size="Size.Medium"
+                               Style="@(string.Format("width: 100%; background-color: {0}; font-weight: bold; color:white", myColor))">
+                        @localizer["Ingresar"]
+                    </MudButton>
+
+
+                </MudItem>
+
+                <MudItem xs="12" Class="d-flex justify-end align-center">
+                    <MudLink Class="pa-1 mx-1" Style="display:block;" Href="/account/forgot-password">
+                        @localizer["Olvidaste tu Password"]
+                    </MudLink>
+                </MudItem>
+
+            </MudItem>
+        </MudItem>
+
+        <MudItem sm="5" Class="d-none d-sm-flex pa-0 loguin-p">
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+<style>
+    .loguin-p {
+        background-image: url(images/mant.png);
+        height: 352px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0px 18px 18px 0px;
+        top: 12px;
+        position: relative;
+        left: -14px;
+    }
+</style>
