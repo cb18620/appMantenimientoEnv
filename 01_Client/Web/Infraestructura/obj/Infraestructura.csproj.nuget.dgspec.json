@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {}
+    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
+    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
+        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
         "projectName": "Infraestructura",
-        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
+        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
         "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\obj\\",
+        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj"
+              "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",

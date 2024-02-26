@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QslnyY1uVeN4j7l+jasELzuCUvuZemJoqNQdlGYSiuQ=",
+  "Hash": "Af5TvBgesJY2GUqfjM6dnbWsd+pYZdcgubwPaImfPNc=",
   "Source": "Server",
   "BasePath": "_content/Server",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Server\\wwwroot",
       "Source": "Server",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "Pattern": "**"
     }
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\syncfusion.blazor\\19.4.0.55\\staticwebassets\\styles\\tailwind-dark.css"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Server.styles.css",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Server.styles.css",
       "SourceId": "Server",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Server",
       "RelativePath": "Server.styles.css",
       "AssetKind": "All",
@@ -2104,13 +2104,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Server.styles.css"
+      "OriginalItemSpec": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Server.styles.css"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Server.bundle.scp.css",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Server.bundle.scp.css",
       "SourceId": "Server",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Server",
       "RelativePath": "Server.bundle.scp.css",
       "AssetKind": "All",
@@ -2123,13 +2123,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Server.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Server.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\css\\css - Acceso directo.lnk",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\css\\css - Acceso directo.lnk",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "css/css - Acceso directo.lnk",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\css\\css - Acceso directo.lnk"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\css\\custom-styles.css",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\css\\custom-styles.css",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "css/custom-styles.css",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\css\\custom-styles.css"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\custom-validation.js",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\custom-validation.js",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "custom-validation.js",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\custom-validation.js"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\botella_vino_loading.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\botella_vino_loading.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/botella_vino_loading.png",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\botella_vino_loading.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\botella-vino-700-estandar-800px-2111d-1.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\botella-vino-700-estandar-800px-2111d-1.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/botella-vino-700-estandar-800px-2111d-1.png",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\botella-vino-700-estandar-800px-2111d-1.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(300_px)l.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(300_px)l.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_blanco_envibo_(300_px)l.png",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_blanco_envibo_(300_px)l.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(500_px).png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(500_px).png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_blanco_envibo_(500_px).png",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_blanco_envibo_(500_px).png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(700_px).png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_blanco_envibo_(700_px).png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_blanco_envibo_(700_px).png",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_blanco_envibo_(700_px).png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_envibol.png",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_envibol.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_300.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_300.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_envibol_color_300.png",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_envibol_color_300.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_500.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_500.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_envibol_color_500.png",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_envibol_color_500.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_700.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\logo_envibol_color_700.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/logo_envibol_color_700.png",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\logo_envibol_color_700.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_300.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_300.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/TAGLINE_300.png",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\TAGLINE_300.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_500.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_500.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/TAGLINE_500.png",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\TAGLINE_500.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_700.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\envibol\\TAGLINE_700.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "envibol/TAGLINE_700.png",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\envibol\\TAGLINE_700.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\favicon.ico",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\images\\imagen-1.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\images\\imagen-1.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "images/imagen-1.png",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagen-1.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\images\\mant.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\images\\mant.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "images/mant.png",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mant.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\JS\\_jsResponse.js",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\JS\\_jsResponse.js",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "JS/_jsResponse.js",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\JS\\_jsResponse.js"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\empresas.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\empresas.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/empresas.svg",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\empresas.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\icon_128.png",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\icon_128.png",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/icon_128.png",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\icon_128.png"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\icovectorsedem.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\icovectorsedem.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/icovectorsedem.svg",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\icovectorsedem.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\image.gif",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\image.gif",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/image.gif",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\image.gif"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\lock-black-48dp.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\lock-black-48dp.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/lock-black-48dp.svg",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\lock-black-48dp.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\log_subsid1io.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\log_subsid1io.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/log_subsid1io.svg",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\log_subsid1io.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\log_subsidio.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\log_subsidio.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/log_subsidio.svg",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\log_subsidio.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\logo_sedem.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\logo_sedem.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/logo_sedem.svg",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\logo_sedem.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\logosedemministerio.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\logosedemministerio.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/logosedemministerio.svg",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\svg\\logosedemministerio.svg"
     },
     {
-      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\svg\\logosubsidio.svg",
+      "Identity": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\svg\\logosubsidio.svg",
       "SourceId": "Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\wwwroot\\",
       "BasePath": "_content/Server",
       "RelativePath": "svg/logosubsidio.svg",
       "AssetKind": "All",

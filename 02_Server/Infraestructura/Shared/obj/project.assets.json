@@ -889,11 +889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
+      "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
+      "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -910,8 +910,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }

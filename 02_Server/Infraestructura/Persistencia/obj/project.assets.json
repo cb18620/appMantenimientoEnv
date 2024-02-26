@@ -6521,11 +6521,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Persistencia\\Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Persistencia\\Persistencia.csproj",
       "projectName": "Persistencia",
-      "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Persistencia\\Persistencia.csproj",
+      "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Persistencia\\Persistencia.csproj",
       "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Persistencia\\obj\\",
+      "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6542,17 +6542,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Aplicacion\\Aplicacion.csproj"
             },
-            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj"
+            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj"
             },
-            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Identity\\Identity.csproj": {
-              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Identity\\Identity.csproj"
+            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Identity\\Identity.csproj": {
+              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Identity\\Identity.csproj"
             },
-            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\Shared.csproj"
+            "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\Shared.csproj"
             }
           }
         }

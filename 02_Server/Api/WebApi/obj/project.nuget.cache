@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PaRDwbRD8CSA7zF+MYCo6hwSyAl0dg0lYLhLUysbrqJ3zvQRF3tccJB6tLWhuo8d/6GwKWD1BV8ooFUMeEZhHA==",
+  "dgSpecHash": "K8d+07Ln9E4X0/dqbVA9PXSzBTEnM6Keq7t76krc7TZ1JkkiGuIhYF37EpEdUl/mjnYFZa60k27br4fNAvqrsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Api\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Api\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\ardalis.specification\\5.2.0\\ardalis.specification.5.2.0.nupkg.sha512",
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\ardalis.specification.entityframeworkcore\\5.2.0\\ardalis.specification.entityframeworkcore.5.2.0.nupkg.sha512",

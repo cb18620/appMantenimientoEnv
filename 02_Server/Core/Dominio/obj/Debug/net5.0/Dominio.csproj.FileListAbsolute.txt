@@ -82,3 +82,16 @@ C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Do
 C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
 C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
 C:\Users\SERGIO - ENVIBOL\source\repos\APPMANTENiVO\APPMANTENV\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.sourcelink.json
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Core\Dominio\obj\Debug\net5.0\ref\Dominio.dll

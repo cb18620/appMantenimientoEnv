@@ -17,6 +17,7 @@ namespace Aplicacion.Features.Maquinarias.Queries
 
     public class GetAllMaqMaquinaElementoQuery : IRequest<Response<List<MaqMaquinaElementoDto>>>
     {
+        //ver detalle
         public int parametroelemento {  get; set; } 
         public class GetAllMaqMaquinaElementoQueryHandler : IRequestHandler<GetAllMaqMaquinaElementoQuery, Response<List<MaqMaquinaElementoDto>>>
         {

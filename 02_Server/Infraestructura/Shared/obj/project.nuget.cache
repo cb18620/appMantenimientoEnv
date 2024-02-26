@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tt/QipLr5IPURx/Tt/dUT3eYA0UZwek1gFd/+4YxcOfLPL3HAH0DORy5smbchSDkQ5Vhope49gYXVKd0ao8XZw==",
+  "dgSpecHash": "e3k8GPtA5uOnGYKxQVwQbzPOUnucPdy5+z73y7U8/yWggnJmF6H6VscUEmo+kV1o8uMTw+lxdfVkyaclk5jtXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
+  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Infraestructura\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\ardalis.specification\\5.2.0\\ardalis.specification.5.2.0.nupkg.sha512",
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

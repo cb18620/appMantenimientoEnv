@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8Q6kVm4Ub4GJiCt4vpqEIHHUYnXz1JkS5kl+1LLxdFO581bIHGLY03BzeWrCKou+cdII50Uxm/iuSQJbe8g2VQ==",
+  "dgSpecHash": "oIJf6+V6RdRPt7A3rdGvSU3ktJkCNZzaCgGciHw461W+J+d2t/XznPwIzS9XQc4HuE2dDapPMFvB0ztFS/H07Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\02_Server\\Core\\Dominio\\Dominio.csproj",
+  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\copilotdev.net.api\\1.1.0\\copilotdev.net.api.1.1.0.nupkg.sha512"
   ],

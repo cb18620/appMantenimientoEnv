@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JOHTCh1aW9B7agU2zNOrTPWqGjH94Pw4RLsZybV4nkV5uPhhlMaqgQpK14ic6/0VFmM5c7PLCHSysCjGKTY2vQ==",
+  "dgSpecHash": "zTC0O/Y1j2N45GvA0K68tYq3LrTNjQ9kd+zhIdPolhszlBy3zXug76lQL0pkOP/90JcEVEQfyjYpfcWEJdzBcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\APPMANTENiVO\\APPMANTENV\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
+  "projectFilePath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\blazored.fluentvalidation\\2.0.1\\blazored.fluentvalidation.2.0.1.nupkg.sha512",
     "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\blazored.localstorage\\4.1.5\\blazored.localstorage.4.1.5.nupkg.sha512",
