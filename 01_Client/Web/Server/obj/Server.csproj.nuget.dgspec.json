@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj": {}
+    "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
+    "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
         "projectName": "Infraestructura",
-        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
-        "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj"
+              "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -97,21 +97,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj": {
+    "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,8 +125,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
-                "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj"
+              "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj": {
+                "projectPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\01_Client\\Web\\Infraestructura\\Infraestructura.csproj"
               }
             }
           }
@@ -201,21 +201,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\SERGIO - ENVIBOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SERGIO - ENVIBOL\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\appMantenimientoEnv\\02_Server\\Core\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SERGIO - ENVIBOL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -262,7 +262,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

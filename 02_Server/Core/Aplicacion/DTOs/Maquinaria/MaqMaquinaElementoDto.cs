@@ -11,7 +11,7 @@ namespace Aplicacion.DTOs.Maquinaria
     {
         public int IdmaquinaElemento { get; set; }
         public int? Idmaquinaria { get; set; }
-        public int? Idelemento { get; set; }
+        public int Idelemento { get; set; }
         public MaquinariaDto Machinery { get; set; } = null;
         public MaqElementoDto MaqElement { get; set; } = null!;
     }

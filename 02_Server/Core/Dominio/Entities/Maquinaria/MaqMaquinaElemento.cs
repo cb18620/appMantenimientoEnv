@@ -9,7 +9,7 @@ namespace Dominio.Entities
         [Key]
         public int IdmaquinaElemento { get; set; }
         public int? Idmaquinaria { get; set; }
-        public int? Idelemento { get; set; }
+        public int Idelemento { get; set; }
 
         [ForeignKey("Idmaquinaria")]
         public  Maquinaria Machinery { get; set; } = null;

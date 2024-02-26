@@ -1,4 +1,5 @@
 ﻿using Aplicacion.Features.Clasificador.Queries;
+using Aplicacion.Features.Maquinarias.Commands;
 using Aplicacion.Features.Maquinarias.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,13 @@ namespace WebApi.Controllers.v1.Maquinarias
             {
                 parametroelemento = id
             }));
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Post(CreateMaqMaquinaElementoCommand command)
+        {
+            return Ok(await Mediator.Send(command));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Infraestructura.Models.Maquinaria
     public class MaqMaquinaElementoDto
     {
         public int IdmaquinaElemento { get; set; }
-        public int Idmaquinaria { get; set; }
+        public int? Idmaquinaria { get; set; }
         public int Idelemento { get; set; }
         public bool VerDetalle { get; set; }
         public MaquinariaDto Machinery { get; set; } = null;

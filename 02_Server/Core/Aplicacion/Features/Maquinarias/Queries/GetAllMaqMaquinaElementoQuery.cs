@@ -43,8 +43,11 @@ namespace Aplicacion.Features.Maquinarias.Queries
     {
         public MaqMaquinaElementoSpecification(int parametroelemento)
         {
-            Query.Include(x => x.Idmaquinaria == parametroelemento);
-        
+
+            Query.Where(x => x.Idmaquinaria == parametroelemento);
+            Query.Include(x => x.Machinery)
+                  .Include(y => y.MaqElement);
+
         }
     }
 }

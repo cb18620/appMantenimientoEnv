@@ -7,6 +7,8 @@
 @using Infraestructura.Models.Maquinaria
 @using Syncfusion.Blazor.Popups
 @inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
 
 <MudTabs Elevation="4" Rounded="true" Color="@Color.Dark" PrevIcon="@Icons.Material.Filled.SkipPrevious" NextIcon="@Icons.Material.Filled.SkipNext">
     <MudTabPanel Text="REGISTRO DE MAQUINARIA" Icon="@Icons.Material.Filled.Build">
@@ -22,7 +24,7 @@
                                                     jsonData="@jsonTipoMaquina"
                                                     NameValue="IdgenClasificador"
                                                     NameDescripcion="Descripcion"
-                                                    @bind-DataValue="@_maquinarianuevo.Tipo"
+                                @bind-DataValue="@_maquinarianuevo.Tipo"
                                                     pPlaceHolder="SECCION" />
                             </MudItem>
                             <MudItem xs="12" sm="6" md="2">
@@ -33,7 +35,7 @@
                                                     jsonData="@jsonColor"
                                                     NameValue="IdgenClasificador"
                                                     NameDescripcion="Descripcion"
-                                                    @bind-DataValue="@_maquinarianuevo.Area"
+                                @bind-DataValue="@_maquinarianuevo.Area"
                                                     pPlaceHolder="SUPERVISIÓN" />
                             </MudItem>
                             <MudItem xs="12" sm="6" md="2">
@@ -41,7 +43,7 @@
                                                     jsonData="@jsonProceso"
                                                     NameValue="IdgenClasificador"
                                                     NameDescripcion="Descripcion"
-                                                    @bind-DataValue="@_maquinarianuevo.Proceso"
+                                @bind-DataValue="@_maquinarianuevo.Proceso"
                                                     pPlaceHolder="PROCESO" />
                             </MudItem>
                             <MudItem xs="12" sm="6" md="2">
@@ -138,68 +140,68 @@
 
                         <MudTd>
                             <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Tipos.Descripcion</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.NombreMaquina</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Areas.Descripcion</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Identificador</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Modelo</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Ubicacion</MudText><br />
-                            </MudTd>
-                            <MudTd>
-                                <MudText Typo="Typo.caption">@context.Descripcion</MudText><br />
-                            </MudTd>
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Tipos.Descripcion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.NombreMaquina</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Areas.Descripcion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Identificador</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Modelo</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Ubicacion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Descripcion</MudText><br />
+                        </MudTd>
 
 
-                            <MudTd>
-                                <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
-                            </MudTd>
+                        <MudTd>
+                            <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
+                        </MudTd>
 
-                            <MudTd class="sobreponer">
+                        <MudTd class="sobreponer">
 
-                                <div class="d-flex">
-                                    <div class="m-auto">
-                                        <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
-                                            <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
-                                        </MudTooltip>
+                            <div class="d-flex">
+                                <div class="m-auto">
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdit(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
 
-                                        <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
-                                            <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaPersona(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
-                                        </MudTooltip>
+                                    <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaPersona(context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
 
-                                        <MudTooltip Text="Agregar Detalle" Color="Color.Success" Placement="Placement.Top">
-                                            <MudIconButton Color="Color.Success" Variant="Variant.Filled" Icon="@Icons.Material.Filled.AddBox" Size="Size.Small" OnClick="@(() => ShowBtnadd(context, context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
-                                        </MudTooltip>
-                                        <MudTooltip Text="Agregar Elemento" Color="Color.Warning" Placement="Placement.Top">
-                                            <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.MiscellaneousServices" Size="Size.Small" OnClick="@(() => ShowBtnaddElementoAsync(context.Idmaquinaria))" />
-                                            <MudText Typo="Typo.caption"></MudText>
-                                        </MudTooltip>
-                                        <MudTooltip Text="Imprimir" Color="Color.Default" Placement="Placement.Top">
-                                            <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => Reporte())" /><MudText Typo="Typo.caption"></MudText>
-                                        </MudTooltip>
+                                    <MudTooltip Text="Agregar Detalle" Color="Color.Success" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Success" Variant="Variant.Filled" Icon="@Icons.Material.Filled.AddBox" Size="Size.Small" OnClick="@(() => ShowBtnadd(context, context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+                                    <MudTooltip Text="Agregar Elemento" Color="Color.Warning" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.MiscellaneousServices" Size="Size.Small" OnClick="@(() => ShowBtnaddElementoAsync(context.Idmaquinaria))" />
+                                        <MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
+                                    @* <MudTooltip Text="Imprimir" Color="Color.Default" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => Reporte())" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip> *@
 
 
 
-                                    </div>
                                 </div>
-                            </MudTd>
-                        </RowTemplate>
-                        <PagerContent>
-                            <MudTablePager />
-                        </PagerContent>
-                        <ChildRowContent>
-                            @if (context.VerDetalle)
+                            </div>
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
                         {
                             <MudTr>
                                 <td colspan="5" style="padding:1px; margin:1px">
@@ -373,61 +375,61 @@
 
                                                 <MudTd>
                                                     <MudText Typo="Typo.caption">@context.IdmaqCaractVehiculo</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Traccion</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Ruedas</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Cilindros</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Direccion</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Transmision</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Conbustible</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Motor</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Capacidad</MudText><br />
-                                                    </MudTd>
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Traccion</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Ruedas</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Cilindros</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Direccion</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Transmision</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Conbustible</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Motor</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Capacidad</MudText><br />
+                                                </MudTd>
 
 
-                                                    <MudTd>
-                                                        <div class="d-flex">
-                                                            <div class="ml-auto">
-                                                                <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
-                                                                    <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
-                                                                </MudTooltip>
+                                                <MudTd>
+                                                    <div class="d-flex">
+                                                        <div class="ml-auto">
+                                                            <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
 
-                                                                <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
-                                                                    <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalle(context.IdmaqCaractVehiculo))" /><MudText Typo="Typo.caption"></MudText>
-                                                                </MudTooltip>
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalle(context.IdmaqCaractVehiculo))" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
 
 
 
-                                                            </div>
                                                         </div>
-                                                    </MudTd>
-                                                </RowTemplate>
-                                                <PagerContent>
-                                                    <MudTablePager />
-                                                </PagerContent>
-                                                <ChildRowContent>
-                                                    @if (context.VerDetalle)
+                                                    </div>
+                                                </MudTd>
+                                            </RowTemplate>
+                                            <PagerContent>
+                                                <MudTablePager />
+                                            </PagerContent>
+                                            <ChildRowContent>
+                                                @if (context.VerDetalle)
                                                 {
                                                     <MudTr>
                                                         <td colspan="11" style="padding:1px; margin:15px">
@@ -558,43 +560,43 @@
 
                                                 <MudTd>
                                                     <MudText Typo="Typo.caption">@context.IdmaqCaractMaquinaria</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Tension</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Corriente</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Frecuencia</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Controlado</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Rpm</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Temperatura</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Caudal</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Presion</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Vibracion</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Espesor</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
-                                                    </MudTd>
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Tension</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Corriente</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Frecuencia</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Controlado</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Rpm</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Temperatura</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Caudal</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Presion</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Vibracion</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Espesor</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Potencia</MudText><br />
+                                                </MudTd>
 
 
-                                                    @* <MudTd>
+                                                @* <MudTd>
                                             <div class="d-flex">
                                             <div class="ml-auto">
                                             <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
@@ -610,12 +612,12 @@
                                             </div>
                                             </div>
                                             </MudTd>*@
-                                                </RowTemplate>
-                                                <PagerContent>
-                                                    <MudTablePager />
-                                                </PagerContent>
-                                                <ChildRowContent>
-                                                    @if (context.VerDetalle)
+                                            </RowTemplate>
+                                            <PagerContent>
+                                                <MudTablePager />
+                                            </PagerContent>
+                                            <ChildRowContent>
+                                                @if (context.VerDetalle)
                                                 {
                                                     <MudTr>
                                                         <td colspan="11" style="padding:1px; margin:15px">
@@ -731,51 +733,51 @@
 
                                                 <MudTd>
                                                     <MudText Typo="Typo.caption">@context.IdmaqCaractInfra</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Ventanas</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Luminarias</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Tomas</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Largo</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Ancho</MudText><br />
-                                                    </MudTd>
-                                                    <MudTd>
-                                                        <MudText Typo="Typo.caption">@context.Altura</MudText><br />
-                                                    </MudTd>
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Puertas</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Ventanas</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Luminarias</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Tomas</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Largo</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Ancho</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.Altura</MudText><br />
+                                                </MudTd>
 
-                                                    <MudTd>
-                                                        <div class="d-flex">
-                                                            <div class="ml-auto">
-                                                                <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
-                                                                    <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
-                                                                </MudTooltip>
+                                                <MudTd>
+                                                    <div class="d-flex">
+                                                        <div class="ml-auto">
+                                                            <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
 
-                                                                <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
-                                                                    <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalleInfra(context.IdmaqCaractInfra))" /><MudText Typo="Typo.caption"></MudText>
-                                                                </MudTooltip>
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="@(() => ShowBtnEliminaDetalleInfra(context.IdmaqCaractInfra))" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
 
 
 
-                                                            </div>
                                                         </div>
-                                                    </MudTd>
-                                                </RowTemplate>
-                                                <PagerContent>
-                                                    <MudTablePager />
-                                                </PagerContent>
-                                                <ChildRowContent>
-                                                    @if (context.VerDetalle)
+                                                    </div>
+                                                </MudTd>
+                                            </RowTemplate>
+                                            <PagerContent>
+                                                <MudTablePager />
+                                            </PagerContent>
+                                            <ChildRowContent>
+                                                @if (context.VerDetalle)
                                                 {
                                                     <MudTr>
                                                         <td colspan="11" style="padding:1px; margin:15px">
@@ -845,51 +847,70 @@
                         <MudCardContent>
                             <div>
                                 <MudCard>
+                                    <EditForm OnValidSubmit="onTablaAsynCElementoDetalle" Model="_maqDetalleElement">
+                                        <DataAnnotationsValidator />
+                                        <MudCardContent>
+                                            <MudGrid>
+                                             
+           
+                                                <MudItem xs="12" sm="6" md="12">
+                                                    <CustomAutoComplete TItem="MaqElementoDto"
+                                                                        jsonData="@jsonElemento"
+                                                                        NameValue="Idelemento"
+                                                                        NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maqDetalleElement.Idelemento"
+                                                  
+                                                                        pPlaceHolder="Seleccione un elemento" />
+                                                </MudItem> 
+
+
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudButton style="margin-right: 10px;" OnClick="@(() => SaveMaqElementoDetalle())" Variant="Variant.Filled" Color="Color.Success">Guardar</MudButton>
+                                        </MudCardActions>
+                                    </EditForm>
+                                </MudCard>
+
+                                <MudCard>
                                     <MudTable Items="@listadetallesMaqMaquinariaElemento" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                                         <HeaderContent>
                                             <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.IdmaquinaElemento)">Nr</MudTableSortLabel></MudTh>
-                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.Idmaquinaria)">Idmaq</MudTableSortLabel></MudTh>
-                                             <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.Idelemento)">Idelement</MudTableSortLabel></MudTh>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.MaqElement.Descripcion)">Idelement</MudTableSortLabel></MudTh>
                                             <MudTh>Opciones</MudTh>
                                         </HeaderContent>
                                         <RowTemplate>
-						<MudTd Style="width:40px">
+                                            <MudTd Style="width:40px">
                                                 <MudText Typo="Typo.caption">@context.IdmaquinaElemento</MudText><br />
-                            </MudTd>
-                                                <MudTd>
-                                                    <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
-                                                </MudTd>
-                                                <MudTd>
-                                                    <MudText Typo="Typo.caption">@context.Idelemento</MudText><br />
-                                                </MudTd>
-                                                <MudTd>
-                                                    <div class="d-flex">
-                                                        <div class="ml-auto">
+                                            </MudTd>
+                                          
+                                            <MudTd>
+                                                <MudText Typo="Typo.caption">@context.MaqElement.Descripcion</MudText><br />
+                                            </MudTd>
+                                            <MudTd>
+                                                <div class="d-flex">
+                                                    <div class="ml-auto">
 
-                                                            <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
-                                                                <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit"/><MudText Typo="Typo.caption"></MudText>
-                                                            </MudTooltip>
-                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
-                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete"/><MudText Typo="Typo.caption"></MudText>
-                                                            </MudTooltip>
-                                                            <MudTooltip Text="Detalle" Color="Color.Default" Placement="Placement.Top">
-                                                                <MudIconButton Color="Color.Tertiary" Variant="Variant.Filled" Icon="@Icons.Material.Filled.AddBox" />
-                                                                <MudText Typo="Typo.caption"></MudText>
-                                                            </MudTooltip>
-                                                        </div>
+                                            
                                                     </div>
-                                                </MudTd>
-                            </RowTemplate>
+                                                </div>
+                                            </MudTd>
+                                        
+
+                                        </RowTemplate>
                                     </MudTable>
+                                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => NavigationManager.NavigateTo("/Maquinaria/elemento"))">
+                                        Agregar un nuevo Elemento
+                                    </MudButton>
                                 </MudCard>
                             </div>
                         </MudCardContent>
                     </Content>
-                </DialogTemplates>
-                    <DialogButtons>
+                </DialogTemplates>  
+                <DialogButtons>
 
-                        <DialogButton Content="CANCELAR" OnClick="@btnCancelPop1" />
-                    </DialogButtons>
+                    <DialogButton Content="CANCELAR" OnClick="@btnCancelPop1" />
+                </DialogButtons>
             </SfDialog>
         </div>
 
@@ -898,7 +919,7 @@
         DE COTIZACION *@
         @* TERMINA AGREGAR DETALLE*@
     </MudTabPanel>
-    <MudTabPanel Text="Analisis RCM">
+    <MudTabPanel Text="">
 
     </MudTabPanel>
 </MudTabs>
@@ -933,6 +954,10 @@
         var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
         DialogService.Show<PgDialog>($"Foto Equipo", parameters, options);
     }
-
+    private void NavigateToElementoPage(int idmaquinaElemento)
+    {
+        // Navega a la página deseada y pasa el ID como un parámetro si es necesario
+        NavigationManager.NavigateTo($"/Maquinaria/elemento/{idmaquinaElemento}");
+    }
 
 }

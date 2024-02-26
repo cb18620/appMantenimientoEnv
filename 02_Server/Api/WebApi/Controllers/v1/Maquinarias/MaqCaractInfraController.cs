@@ -24,8 +24,7 @@ namespace WebApi.Controllers.v1.Maquinarias
         [Authorize]
         public async Task<IActionResult> Post(CreateMaqCaractInfraCommand command)
         {
-            return Ok(await Mediator.Send(command));
-           
+            return Ok(await Mediator.Send(command));          
         }
 
         [HttpPut("{id}")]
