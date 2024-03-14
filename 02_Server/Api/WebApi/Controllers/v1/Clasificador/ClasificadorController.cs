@@ -1,5 +1,6 @@
 ﻿using Aplicacion.Features.Clasificador.Commands;
 using Aplicacion.Features.Clasificador.Queries;
+using Aplicacion.Features.ClasificadorTipo.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace WebApi.Controllers.v1.Clasificador
 
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> Post(CreateGenClasificadorCommand command)
         {
             return Ok(await Mediator.Send(command));
@@ -45,6 +46,12 @@ namespace WebApi.Controllers.v1.Clasificador
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteGenClasificadorCommand { IdgenClasificador = id }));
+        }
+        [HttpGet("rcm")]
+        public async Task<IActionResult> GetlistaRcm()
+        {
+            return Ok(await Mediator.Send(new GetAllClasificadorRcmQuery()));
+
         }
     }
 }

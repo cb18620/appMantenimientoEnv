@@ -13,7 +13,7 @@ namespace WebApi.Controllers.v1.Maquinarias
     [ApiVersion("1.0")]
     public class MaquinariaController : BaseApiController
     {
-    
+
         [HttpGet("Get")]
         [Authorize]
         public async Task<IActionResult> Get()
@@ -56,7 +56,7 @@ namespace WebApi.Controllers.v1.Maquinarias
             return Ok(await Mediator.Send(new GetAllProcesoQuery()));
 
         }
-    
+
         [HttpGet("Tipomaquinaria")]
         public async Task<IActionResult> GetlistaTipoMaquinaria()
         {

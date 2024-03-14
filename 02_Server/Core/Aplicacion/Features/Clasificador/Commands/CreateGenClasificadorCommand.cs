@@ -17,7 +17,7 @@ namespace Aplicacion.Features.Clasificador.Commands
 
     public class CreateGenClasificadorCommand : IRequest<Response<int>>
     {
-        public GenClasificadorDto GenClasificador { get; set; }
+        public GenClasificadorDto _GenClasificador { get; set; }
     }
 
     public class CreateGenClasificadorCommandHandler : IRequestHandler<CreateGenClasificadorCommand, Response<int>>
@@ -32,7 +32,8 @@ namespace Aplicacion.Features.Clasificador.Commands
 
         public async Task<Response<int>> Handle(CreateGenClasificadorCommand request, CancellationToken cancellationToken)
         {
-            var nuevoRegistro = _mapper.Map<GenClasificador>(request.GenClasificador);
+            var nuevoRegistro = _mapper.Map<GenClasificador>(request._GenClasificador);
+
             var data = await _repositoryAsync.AddAsync(nuevoRegistro);
             return new Response<int>(data.IdgenClasificador);
         }

@@ -5,22 +5,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Infraestructura.Models.Clasificador;
 
-using Newtonsoft.Json;
 
 namespace Server.Pages.Pages.Parametricas
 
 {
     public partial class Parametricas
     {
-        public static List<GenClasificadorDto> genClasificador { get; set; }
-        public static List<GenClasificadortipoDto> clasificadortipo { get; set; }
+        public static List<GenClasificadorDto> genClasificador { get; set; } = new List<GenClasificadorDto>();
+        public static List<GenClasificadortipoDto> clasificadortipo { get; set; } = new List<GenClasificadortipoDto>();
+
        
        
        
-        public GenClasificadorDto _GenClasificador = new GenClasificadorDto();
+        public GenClasificadorDto _ClasificadorNuevo = new GenClasificadorDto();
 
         private bool visible;
         void Submit() => visible = false;
@@ -121,19 +120,14 @@ namespace Server.Pages.Pages.Parametricas
         }
 
 
-     
-      
 
         protected async Task SaveClasificador()
         {
             try
             {
-                //string transporteJson = JsonConvert.SerializeObject(_TransporteAlmacen);
-                //_MessageShow(transporteJson, State.Warning);
-                //return;
 
                 _Loading.Show();
-                var vrespost = await _Rest.PostAsync<int?>("Clasificador", new { GenClasificador = _GenClasificador });
+                var vrespost = await _Rest.PostAsync<int?>("Clasificador", new { _GenClasificador = _ClasificadorNuevo });
 
 
                 _Loading.Hide();
@@ -156,6 +150,7 @@ namespace Server.Pages.Pages.Parametricas
                 _MessageShow(e.Message, State.Error);
             }
         }
+
 
 
         protected async Task EditClasificador(GenClasificadorDto dtoTransporte)

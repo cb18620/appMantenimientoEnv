@@ -1,11 +1,6 @@
-﻿using Aplicacion.DTOs.Maquinaria;
-using Infraestructura.Abstract;
+﻿using Infraestructura.Abstract;
 using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using MudBlazor;
-using Newtonsoft.Json;
-using Server.Pages.Pages.Persona;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +9,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Web;
 using Infraestructura.Models.Clasificador;
-using Dominio.Entities;
-using Infraestructura.Models.Authentication;
 using Infraestructura.Models.Maquinaria;
-using Microsoft.JSInterop;
 
 namespace Server.Pages.Pages.Maquinaria
 {
@@ -110,8 +102,7 @@ namespace Server.Pages.Pages.Maquinaria
                     });
                     return;
                 }
-                
-                // _navMgr.NavigateTo("/Afiliacion/Empresas", true);
+
             }
             catch (Exception e)
             {
@@ -132,7 +123,9 @@ namespace Server.Pages.Pages.Maquinaria
                     _DialogShow(_result.Message, _result.State);
                 }
                 listadetalles = _result.Data;
-           
+
+                StateHasChanged();
+
             }
             catch (Exception e)
             {
@@ -229,16 +222,19 @@ namespace Server.Pages.Pages.Maquinaria
         }
         protected async Task SaveMaquinariaDetalle()
         {
+            
             try
             {
                 _Loading.Show();
-                var vrespost = await _Rest.PostAsync<int?>("MaqCaractMaquinaria", new { maqCaractMaquinaria = _maqCaractMaquinaria });
+                _maqCaractMaquinaria.Idmaquinaria = _TituloPopup2;
+                var requestObj = new { maqCaractMaquinaria = _maqCaractMaquinaria };
+                var vrespost = await _Rest.PostAsync<int?>("MaqCaractMaquinaria", requestObj);
                 _Loading.Hide();
                 _MessageShow(vrespost.Message, vrespost.State);
 
                 if (vrespost.State == State.Success)
                 {
-                    await onTablaAsyncdetalle(_TituloPopup2);
+                    await onTablaAsyncdetalleMaquinaria(_TituloPopup2);
                     _maqCaractMaquinaria = new MaqCaractMaquinariaDto();
                     _MessageShow("Agregado Correctamente", State.Success);
                 }
@@ -295,7 +291,7 @@ namespace Server.Pages.Pages.Maquinaria
                 {
                     _MessageShow(vrespost.Message, vrespost.State);
                     //_RowIdsubPlanificaciondetalle = 0;
-                    await onTablaAsyncdetalle(_TituloPopup2);
+                    await onTablaAsyncdetalleMaquinaria(_TituloPopup2);
                     StateHasChanged();
                 }
             });
@@ -342,13 +338,15 @@ namespace Server.Pages.Pages.Maquinaria
             try
             {
                 _Loading.Show();
-                var vrespost = await _Rest.PostAsync<int?>("MaqCaractInfra", new { maqCaractInfra = _maqCaractInfra });
+                _maqCaractInfra.Idmaquinaria = _TituloPopup2;
+                var requestObj = new { maqCaractInfra = _maqCaractInfra };
+                var vrespost = await _Rest.PostAsync<int?>("MaqCaractInfra", requestObj);
                 _Loading.Hide();
                 _MessageShow(vrespost.Message, vrespost.State);
 
                 if (vrespost.State == State.Success)
                 {
-                    await onTablaAsyncdetalle(_TituloPopup2);
+                    await onTablaAsyncdetalleInfra(_TituloPopup2); // Esto debería actualizar la UI con los nuevos detalles
                     _maqCaractInfra = new MaqCaractInfraDto();
                     _MessageShow("Agregado Correctamente", State.Success);
                 }
@@ -360,8 +358,6 @@ namespace Server.Pages.Pages.Maquinaria
                     });
                     return;
                 }
-
-                // _navMgr.NavigateTo("/Afiliacion/Empresas", true);
             }
             catch (Exception e)
             {
@@ -369,6 +365,8 @@ namespace Server.Pages.Pages.Maquinaria
                 _MessageShow(e.Message, State.Error);
             }
         }
+
+
         protected async Task onTablaAsyncdetalleInfra(int id)
         {
           
@@ -387,6 +385,7 @@ namespace Server.Pages.Pages.Maquinaria
                 listadetallesInfra = _result.Data;
                 //string clienteJson = JsonConvert.SerializeObject(listadetallesInfra);
                 //_MessageShow(clienteJson, State.Warning);
+                StateHasChanged();
             }
             catch (Exception e)
             {
@@ -406,7 +405,7 @@ namespace Server.Pages.Pages.Maquinaria
                 {
                     _MessageShow(vrespost.Message, vrespost.State);
                     //_RowIdsubPlanificaciondetalle = 0;
-                    await onTablaAsyncdetalle(_TituloPopup2);
+                    await onTablaAsyncdetalleInfra(_TituloPopup2);
                     StateHasChanged();
                 }
             });
@@ -463,7 +462,7 @@ namespace Server.Pages.Pages.Maquinaria
                 if (vrespost.State == State.Success)
                 {
                     
-                    await onTablaAsyncdetalle(_TituloPopup2);
+                    await OnTablaDetalleMaqMaquinariaElementoAsync(_TituloPopup2);
                     _maqDetalleElement = new MaqMaquinaElementoDto();
                     _MessageShow("Agregado Correctamente", State.Success);
                     StateHasChanged(); 
@@ -770,9 +769,6 @@ namespace Server.Pages.Pages.Maquinaria
         }
 
         //----------------------- FIN SECCIÓN FILE UPLOAD -----------------------------
-        protected async void Reporte()
-        {
-            await JSRuntime.InvokeVoidAsync("CargaReportePop", new { ruta = "/reports/ENVIBOL/PRODUCCION/Almacen/Reporte_actual_dia" });
-        }
+     
     }
 }

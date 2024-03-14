@@ -1,5 +1,4 @@
-﻿using Aplicacion.DTOs.Maquinaria;
-using Infraestructura.Abstract;
+﻿using Infraestructura.Abstract;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using System.Threading.Tasks;

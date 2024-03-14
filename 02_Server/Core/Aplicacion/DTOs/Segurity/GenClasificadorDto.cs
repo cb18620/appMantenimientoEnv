@@ -13,6 +13,8 @@ namespace Aplicacion.DTOs.Segurity
         public string Descripcion { get; set; }
         public string Valor2 { get; set; }
         public string Valor3 { get; set; }
+        public int? Valor4 { get; set; }
+        public int? Valor5 { get; set; }
         public string Otro { get; set; }
 
         public GenClasificadortipoDto Tipo { get; set; } = null!;

@@ -3,6 +3,7 @@ using Dominio.Entities;
 using Dominio.Entities.Seguridad;
 using Dominio.Entities.Seguridadmetricas;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace Persistencia.Contexts
 {
@@ -24,8 +25,11 @@ namespace Persistencia.Contexts
         public DbSet<MaqElemento> MaqElemento { get; set; } 
         public DbSet<MaqCaractInfra> MaqCaractInfra { get; set; }
         public DbSet<MaqCaractMaquinaria> MaqCaractMaquinaria { get; set; } 
-        public DbSet<MaqCaractVehiculo> MaqCaractVehiculo { get; set; } 
-        #endregion
+        public DbSet<MaqCaractVehiculo> MaqCaractVehiculo { get; set; }
+        public DbSet<MaqImpactoRcm> MaqImpactoRcm { get; set; }    
+        public DbSet<ConfigImpacto> ConfigImpacto { get; set; }
+
+       #endregion
 
     }
 }

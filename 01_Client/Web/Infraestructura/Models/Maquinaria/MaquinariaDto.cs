@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplicacion.DTOs.Maquinaria
+namespace Infraestructura.Models.Maquinaria
 {
     public class MaquinariaDto
     {
@@ -34,7 +34,7 @@ namespace Aplicacion.DTOs.Maquinaria
         public string Origen { get; set; }
         public string RecibidoDe { get; set; }
         public int Proceso { get; set; }
-        public GenClasificador Procesos { get; set; } 
+        public GenClasificador Procesos { get; set; }
         public bool VerDetalle { get; set; }
     }
 }

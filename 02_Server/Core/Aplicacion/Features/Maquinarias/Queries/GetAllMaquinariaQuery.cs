@@ -25,7 +25,6 @@ namespace Aplicacion.Features.Maquinarias.Queries
                 _repositoryAsync = repositoryAsync;
                 _mapper = mapper;
             }
-
             public async Task<Response<List<MaquinariaDto>>> Handle(GetAllMaquinariaQuery request, CancellationToken cancellationToken)
             {
                 var _Maquinaria = await _repositoryAsync.ListAsync(new MaquinariaSpecification());
@@ -34,7 +33,6 @@ namespace Aplicacion.Features.Maquinarias.Queries
             }
         }
     }
-
     public class MaquinariaSpecification : Specification<Maquinaria>
     {
         public MaquinariaSpecification()
@@ -45,8 +43,7 @@ namespace Aplicacion.Features.Maquinarias.Queries
                  .Include(a => a.Areas)
                  .Include(m => m.Tipos)
                  .Include(pr => pr.Procesos);
-                 
+
         }
     }
 }
-

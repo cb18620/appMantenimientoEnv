@@ -18,16 +18,17 @@ namespace Aplicacion.Mappings
             #region QueryDto
             CreateMap<SegvUsuario, SegUsuarioDto>();
             CreateMap<GenPersona, PersonaDto>();
-            CreateMap<Maquinaria, MaquinariaDto>();
             CreateMap<GenClasificador, GenClasificadorDto>();
             CreateMap<GenClasificadortipo, GenClasificadortipoDto>();
-
             CreateMap<Maquinaria, MaquinariaDto>();
             CreateMap<MaqMaquinaElemento, MaqMaquinaElementoDto>(); 
             CreateMap<MaqElemento, MaqElementoDto>();
             CreateMap<MaqCaractInfra, MaqCaractInfraDto>(); 
             CreateMap<MaqCaractMaquinaria, MaqCaractMaquinariaDto>();   
-            CreateMap<MaqCaractVehiculo, MaqCaractVehiculoDto>();   
+            CreateMap<MaqCaractVehiculo, MaqCaractVehiculoDto>();
+            CreateMap<MaqImpactoRcm, MaqImpactoRcmDto>();
+            CreateMap<ConfigImpacto, ConfigImpactoDto>();
+  
             /**///**
 
             #endregion
@@ -39,13 +40,14 @@ namespace Aplicacion.Mappings
             CreateMap<CreatePersonaCommand, GenPersona>();
             CreateMap<GenClasificadortipoDto, GenClasificadortipo>();
             CreateMap<GenClasificadorDto, GenClasificador>();
-
             CreateMap<MaquinariaDto, Maquinaria>();
             CreateMap<MaqMaquinaElementoDto, MaqMaquinaElemento>();
             CreateMap<MaqElementoDto, MaqElemento>();
             CreateMap<MaqCaractInfraDto , MaqCaractInfra>();
             CreateMap<MaqCaractMaquinariaDto, MaqCaractMaquinaria>();
             CreateMap<MaqCaractVehiculoDto, MaqCaractVehiculo>();
+            CreateMap<MaqImpactoRcmDto, MaqImpactoRcm>();
+            CreateMap<ConfigImpactoDto, ConfigImpacto>();
 
             #endregion 
         }

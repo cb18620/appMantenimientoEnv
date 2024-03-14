@@ -159,6 +159,11 @@ C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Infraestruc
 C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.pdb
 C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.genruntimeconfig.cache
 C:\Users\SERGIO - ENVIBOL\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\ref\Identity.dll
+C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.AssemblyInfo.cs
+C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Identity.deps.json
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Identity.runtimeconfig.json
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Identity.runtimeconfig.dev.json
@@ -168,11 +173,6 @@ C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Dominio.dll
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Aplicacion.pdb
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\bin\Debug\net5.0\Dominio.pdb
-C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.csproj.AssemblyReference.cache
-C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.AssemblyInfoInputs.cache
-C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.AssemblyInfo.cs
-C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.csproj.CopyComplete
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\Identity.dll
 C:\Users\PC\source\repos\appMantenimientoEnv\02_Server\Infraestructura\Identity\obj\Debug\net5.0\refint\Identity.dll

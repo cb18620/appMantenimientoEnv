@@ -16,7 +16,7 @@ namespace Dominio.Entities
         public string Identificador { get; set; }
         public int Area { get; set; }
         [ForeignKey("Area")]
-        public GenClasificador Areas { get; set; } 
+        public GenClasificador Areas { get; set; }
         public string Caracteristicas { get; set; }
         public string Marca { get; set; }
         public int Tipo { get; set; }
@@ -35,7 +35,7 @@ namespace Dominio.Entities
         public string RecibidoDe { get; set; }
         public int Proceso { get; set; }
         [ForeignKey("Proceso")]
-        public GenClasificador Procesos { get; set; } 
+        public GenClasificador Procesos { get; set; }
 
         public virtual ICollection<MaqMaquinaElemento> MaqMaquinaElementos { get; set; }
 

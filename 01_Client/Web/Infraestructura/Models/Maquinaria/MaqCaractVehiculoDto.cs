@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplicacion.DTOs.Maquinaria
+namespace Infraestructura.Models.Maquinaria
 {
     public class MaqCaractVehiculoDto
     {

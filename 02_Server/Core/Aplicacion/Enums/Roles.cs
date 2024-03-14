@@ -14,7 +14,8 @@
         especialidad=1,
         area = 2,   
         proceso =4, 
-        tipoMaquinaria =5, 
+        tipoMaquinaria =5,
+        rcm = 6,
 
 
     }
