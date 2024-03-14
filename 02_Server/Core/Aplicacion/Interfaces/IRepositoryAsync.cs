@@ -1,11 +1,16 @@
 ﻿using Ardalis.Specification;
+using Dominio.Entities;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Aplicacion.Interfaces
 {
     public interface IRepositoryAsync<T> : IRepositoryBase<T> where T : class
     {
+        Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
+
+
         /// <summary>
         /// Retorna una funcion refcursor desde la base d edatos
         /// </summary>

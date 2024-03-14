@@ -1,6 +1,7 @@
 ﻿using Aplicacion.Interfaces;
 using Ardalis.Specification.EntityFrameworkCore;
 using AutoMapper;
+using Dominio.Entities;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Persistencia.Contexts;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistencia.Repository.Common.Aplicacion
@@ -73,6 +75,13 @@ namespace Persistencia.Repository.Common.Aplicacion
 
             return vList;
         }
+        public async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
+        {
+            await _dbContext.Set<T>().AddRangeAsync(entities, cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+        }
+
+
 
         private List<T> DataReaderMapToList<T>(IDataReader dr)
         {
@@ -105,6 +114,6 @@ namespace Persistencia.Repository.Common.Aplicacion
             }
             return list;
         }
-
+       
     }
 }

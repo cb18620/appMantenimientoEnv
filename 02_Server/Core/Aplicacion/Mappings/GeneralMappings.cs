@@ -47,7 +47,9 @@ namespace Aplicacion.Mappings
             CreateMap<MaqCaractMaquinariaDto, MaqCaractMaquinaria>();
             CreateMap<MaqCaractVehiculoDto, MaqCaractVehiculo>();
             CreateMap<MaqImpactoRcmDto, MaqImpactoRcm>();
+            CreateMap<ImpactoItemDto, MaqImpactoRcm>();
             CreateMap<ConfigImpactoDto, ConfigImpacto>();
+
 
             #endregion 
         }

@@ -45,9 +45,7 @@ namespace Aplicacion.Features.Clasificador.Commands
     {
         public CreateGenClasificadorCommandValidator()
         {
-           /*RuleFor(p => p.tabla.campo)
-                .NotEmpty().WithMessage("{PropertyName} no pude ser vacio")
-                .MaximumLength(120).WithMessage("{PropertyName} no debe exceder de {MaxLength} caracteres");*/
+   
         }
     }
 }

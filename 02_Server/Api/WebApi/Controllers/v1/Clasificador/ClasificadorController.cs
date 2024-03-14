@@ -21,8 +21,8 @@ namespace WebApi.Controllers.v1.Clasificador
         }
 
 
-        [HttpPost]
-        //[Authorize]
+        [HttpPost] 
+        [Authorize]
         public async Task<IActionResult> Post(CreateGenClasificadorCommand command)
         {
             return Ok(await Mediator.Send(command));
