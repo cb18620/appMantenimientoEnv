@@ -17,17 +17,27 @@ namespace WebApi.Controllers.v1.Maquinarias
     public class MaqImpactoRcmController : BaseApiController
     {
 
-        [HttpGet("GetAllMaqImpactoRcm")]
-        public async Task<IActionResult> GetAllMaqImpactoRcm()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllMaqImpactoRcm(int id)
         {
-            return Ok(await Mediator.Send(new GetAllMaqImpactoRcmQuery()));
+            return Ok(await Mediator.Send(new GetAllMaqImpactoRcmQuery
+            {
+                parametrorcm = id
+            }));
         }
-        [HttpPost("CreateBatchMaqImpactoRcm")]
+
+        [HttpGet("Get")]
         [Authorize]
-        public async Task<IActionResult> CreateBatchMaqImpactoRcm([FromBody] CreateMaqImpactoRcmBatchCommand command)
+        public async Task<IActionResult> GetImpactoRCM()
         {
-            return Ok(await Mediator.Send(command));
+            return Ok(await Mediator.Send(new GetAllImpactoRCMQuery()));
         }
+        //[HttpPost("CreateBatchMaqImpactoRcm")]
+        //[Authorize]
+        //public async Task<IActionResult> CreateBatchMaqImpactoRcm([FromBody] CreateMaqImpactoRcmBatchCommand command)
+        //{
+        //    return Ok(await Mediator.Send(command));
+        //}
 
     }
 }

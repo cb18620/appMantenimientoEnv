@@ -10,7 +10,7 @@ namespace Aplicacion.DTOs.Maquinaria
     public class MaqImpactoRcmDto
     {
         public int IdmaqImpactoRcm { get; set; }
-        public int Idmaquinaria { get; set; }
+        public int? Idmaquinaria { get; set; }
         public MaquinariaDto Maquinaria { get; set; }
         public int IdgenClasificador { get; set; }
         public GenClasificadorDto Clasificador { get; set; }

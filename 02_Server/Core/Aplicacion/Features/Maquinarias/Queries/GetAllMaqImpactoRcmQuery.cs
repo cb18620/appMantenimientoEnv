@@ -17,8 +17,8 @@ namespace Aplicacion.Features.Maquinarias.Queries
 
     public class GetAllMaqImpactoRcmQuery : IRequest<Response<List<MaqImpactoRcmDto>>>
     {
-   
 
+        public int parametrorcm { get; set; }
 
         public class GetAllMaqImpactoRcmQueryHandler : IRequestHandler<GetAllMaqImpactoRcmQuery, Response<List<MaqImpactoRcmDto>>>
         {
@@ -32,7 +32,7 @@ namespace Aplicacion.Features.Maquinarias.Queries
 
             public async Task<Response<List<MaqImpactoRcmDto>>> Handle(GetAllMaqImpactoRcmQuery request, CancellationToken cancellationToken)
             {
-                var _MaqImpactoRcmList = await _repositoryAsync.ListAsync(new MaqImpactoRcmSpecification(),cancellationToken);
+                var _MaqImpactoRcmList = await _repositoryAsync.ListAsync(new MaqImpactoRcmSpecification(request.parametrorcm), cancellationToken);
                 var _MaqImpactoRcmDtoList = _mapper.Map<List<MaqImpactoRcmDto>>(_MaqImpactoRcmList);
                 return new Response<List<MaqImpactoRcmDto>>(_MaqImpactoRcmDtoList);
             }
@@ -42,11 +42,12 @@ namespace Aplicacion.Features.Maquinarias.Queries
 
     public class MaqImpactoRcmSpecification : Specification<MaqImpactoRcm>
     {
-        public MaqImpactoRcmSpecification()
+        public MaqImpactoRcmSpecification(int parametrorcm)
         {
-            Query.Include(x => x.Maquinaria)
-              .Include(x => x.Clasificador)
-              .Include(x => x.Impacto);
+            Query.Where(x => x.Idmaquinaria == parametrorcm);
+            Query.Include(x => x.Clasificador)
+              .Include(y => y.Impacto)
+              .Include(a => a.Maquinaria);
         }
     }
 }

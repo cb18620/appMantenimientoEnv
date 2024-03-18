@@ -186,8 +186,12 @@
                                         <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.MiscellaneousServices" Size="Size.Small" OnClick="@(() => ShowBtnaddElementoAsync(context.Idmaquinaria))" />
                                         <MudText Typo="Typo.caption"></MudText>
                                     </MudTooltip>
+                                    <MudTooltip Text="Agregar RCM" Color="Color.Warning" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Dangerous" Size="Size.Small" OnClick="@(() => ShowBtnImpactoRcmAsync(context.Idmaquinaria))" />
+                                        <MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
                                     @* <MudTooltip Text="Imprimir" Color="Color.Default" Placement="Placement.Top">
-                                        <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => Reporte())" /><MudText Typo="Typo.caption"></MudText>
+                                    <MudIconButton Color="Color.Info" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => Reporte())" /><MudText Typo="Typo.caption"></MudText>
                                     </MudTooltip> *@
 
 
@@ -850,17 +854,16 @@
                                         <DataAnnotationsValidator />
                                         <MudCardContent>
                                             <MudGrid>
-                                             
-           
+
+
                                                 <MudItem xs="12" sm="6" md="12">
                                                     <CustomAutoComplete TItem="MaqElementoDto"
                                                                         jsonData="@jsonElemento"
                                                                         NameValue="Idelemento"
                                                                         NameDescripcion="Descripcion"
                                                     @bind-DataValue="@_maqDetalleElement.Idelemento"
-                                                  
                                                                         pPlaceHolder="Seleccione un elemento" />
-                                                </MudItem> 
+                                                </MudItem>
 
                                             </MudGrid>
                                         </MudCardContent>
@@ -881,19 +884,17 @@
                                             <MudTd Style="width:40px">
                                                 <MudText Typo="Typo.caption">@context.IdmaquinaElemento</MudText><br />
                                             </MudTd>
-                                          
+
                                             <MudTd>
                                                 <MudText Typo="Typo.caption">@context.MaqElement.Descripcion</MudText><br />
                                             </MudTd>
                                             <MudTd>
                                                 <div class="d-flex">
                                                     <div class="ml-auto">
-
-                                            
                                                     </div>
                                                 </div>
                                             </MudTd>
-                                        
+
 
                                         </RowTemplate>
                                     </MudTable>
@@ -904,10 +905,61 @@
                             </div>
                         </MudCardContent>
                     </Content>
-                </DialogTemplates>  
+                </DialogTemplates>
                 <DialogButtons>
 
                     <DialogButton Content="CANCELAR" OnClick="@btnCancelPop1" />
+                </DialogButtons>
+            </SfDialog>
+        </div>
+
+        <div>
+            <SfDialog Target="#target" ZIndex="999" Width="60%" Height="90%" AllowDragging="true" IsModal="true" style="min-height: 90%" CloseOnEscape="false" @bind-Visible="@popupImpactoRcmView">
+                <DialogTemplates>
+                    <Header><strong>@_TituloPopup2 </strong> <strong>@_TituloPopup</strong></Header>
+                    <Content>
+                        <MudCardContent>
+                            <div>
+
+
+                                <MudCard>
+                                    <MudTable Items="@listaImapctoRcm" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                                        <HeaderContent>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqImpactoRcmDto, object>(x=>x.IdmaqImpactoRcm)">Nr</MudTableSortLabel></MudTh>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqImpactoRcmDto, object>(x=>x.Clasificador.Descripcion)">valor</MudTableSortLabel></MudTh>
+                                            <MudTh><MudTableSortLabel SortBy="new Func<MaqImpactoRcmDto, object>(x=>x.Maquinaria.NombreMaquina)">Nr</MudTableSortLabel></MudTh>
+                                            <MudTh>Opciones</MudTh>
+                                        </HeaderContent>
+                                        <RowTemplate>
+                                            <MudTd Style="width:40px">
+                                                <MudText Typo="Typo.caption">@context.IdmaqImpactoRcm</MudText><br />
+                                            </MudTd>
+                                            <MudTd Style="width:40px">
+                                                <MudText Typo="Typo.caption">@context.Clasificador.Descripcion</MudText><br />
+                                            </MudTd>
+                                            <MudTd Style="width:40px">
+                                                <MudText Typo="Typo.caption">@context.Maquinaria.NombreMaquina</MudText><br />
+                                            </MudTd>
+
+                                            <MudTd>
+                                                <div class="d-flex">
+                                                    <div class="ml-auto">
+                                                    </div>
+                                                </div>
+                                            </MudTd>
+
+
+                                        </RowTemplate>
+                                    </MudTable>
+
+                                </MudCard>
+                            </div>
+                        </MudCardContent>
+                    </Content>
+                </DialogTemplates>
+                <DialogButtons>
+
+                    <DialogButton Content="CANCELAR" OnClick="@btnCancelPop2" />
                 </DialogButtons>
             </SfDialog>
         </div>

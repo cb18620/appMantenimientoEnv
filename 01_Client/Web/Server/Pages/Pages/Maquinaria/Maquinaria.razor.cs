@@ -20,25 +20,25 @@ namespace Server.Pages.Pages.Maquinaria
         private static List<MaqCaractVehiculoDto> listadetalles { get; set; }
         private static List<MaqCaractInfraDto> listadetallesInfra { get; set; }
         private static List<MaqCaractMaquinariaDto> listadetallesMaquinaria { get; set; }
-        
+        private static List<MaqImpactoRcmDto> listaImapctoRcm { get; set; }
         public static List<MaquinariaDto> maquinaria { get; set; }
 
         public MaqCaractVehiculoDto _maqCaractVehiculo = new MaqCaractVehiculoDto();
         public MaqCaractMaquinariaDto _maqCaractMaquinaria = new MaqCaractMaquinariaDto();
-        public MaqCaractInfraDto _maqCaractInfra = new MaqCaractInfraDto(); 
-        public MaqMaquinaElementoDto _MaqMaquinaElemento =new MaqMaquinaElementoDto();
+        public MaqCaractInfraDto _maqCaractInfra = new MaqCaractInfraDto();
+        public MaqMaquinaElementoDto _MaqMaquinaElemento = new MaqMaquinaElementoDto();
 
         public MaquinariaDto _maquinariaSeleccionada = new MaquinariaDto();
 
-             private List<MaqMaquinaElementoDto> listadetallesMaqMaquinariaElemento;
+        private List<MaqMaquinaElementoDto> listadetallesMaqMaquinariaElemento;
         public MaqMaquinaElementoDto _maqDetalleElement = new MaqMaquinaElementoDto();
 
 
         private bool visible;
-        
+
         private void OpenDialog() => visible = true;
         void Submit() => visible = false;
-        
+
         private DialogOptions dialogOptions = new() { FullWidth = true };
         private bool dense = true;
         private bool hover = true;
@@ -46,14 +46,14 @@ namespace Server.Pages.Pages.Maquinaria
         private bool bordered = true;
         private bool striped2 = true;
         //private bool bordered2 = true;
-       
+
         private bool popupAdmView { get; set; } = false;
 
-        
+
         string _TituloPopup; string _TituloPopup1; int _TituloPopup2;
         private string searchString = "";
         public string jsonColor { get; set; }
-        public string jsonProceso { get; set; } 
+        public string jsonProceso { get; set; }
         public string jsonTipoMaquina { get; set; }
         public string jsonElemento { get; set; }
 
@@ -91,8 +91,8 @@ namespace Server.Pages.Pages.Maquinaria
                 if (vrespost.State == State.Success)
                 {
                     await onTablaAsyncdetalle(_TituloPopup2);
-                    _maqCaractVehiculo = new MaqCaractVehiculoDto();    
-                    _MessageShow("Agregado Correctamente",State.Success);
+                    _maqCaractVehiculo = new MaqCaractVehiculoDto();
+                    _MessageShow("Agregado Correctamente", State.Success);
                 }
                 else
                 {
@@ -116,7 +116,7 @@ namespace Server.Pages.Pages.Maquinaria
         {
             try
             {
-                var _result = await _Rest.GetAsync<List<MaqCaractVehiculoDto>>("MaqCaractVehiculo/"+id);
+                var _result = await _Rest.GetAsync<List<MaqCaractVehiculoDto>>("MaqCaractVehiculo/" + id);
 
                 if (_result.State != State.Success)
                 {
@@ -177,7 +177,7 @@ namespace Server.Pages.Pages.Maquinaria
             {
                 _Loading.Hide();
             }
-        } 
+        }
         protected async Task ShowBtnadd(MaquinariaDto maquinariaSeleccionada, int v_Id)
         {
             // Asegúrate de inicializar _maqCaractVehiculo antes de utilizarlo
@@ -194,10 +194,10 @@ namespace Server.Pages.Pages.Maquinaria
 
             _TituloPopup2 = v_Id;
 
-            _maqCaractVehiculo.Idmaquinaria = _TituloPopup2;  
+            _maqCaractVehiculo.Idmaquinaria = _TituloPopup2;
             this.popupAdmView = true;
         }
-     
+
 
         protected void ShowBtnEdit1(int v_IdRecepcion)
         {
@@ -222,7 +222,7 @@ namespace Server.Pages.Pages.Maquinaria
         }
         protected async Task SaveMaquinariaDetalle()
         {
-            
+
             try
             {
                 _Loading.Show();
@@ -269,8 +269,8 @@ namespace Server.Pages.Pages.Maquinaria
                 }
                 listadetallesMaquinaria = _result.Data;
                 //_MessageShow(id.ToString(), State.Success);
-                
-              
+
+
             }
             catch (Exception e)
             {
@@ -369,10 +369,10 @@ namespace Server.Pages.Pages.Maquinaria
 
         protected async Task onTablaAsyncdetalleInfra(int id)
         {
-          
+
             try
             {
-                var _result = await _Rest.GetAsync<List<MaqCaractInfraDto>>("MaqCaractInfra/"+id);
+                var _result = await _Rest.GetAsync<List<MaqCaractInfraDto>>("MaqCaractInfra/" + id);
                 //codigo para ver si esta guardando 
                 //_MessageShow("hola", State.Success);
                 if (_result.State != State.Success)
@@ -413,11 +413,50 @@ namespace Server.Pages.Pages.Maquinaria
         //---------AGREGAR FUNCIONES DEL DETALLE DETALLE  INFRAESTRUCTURA fIN--------------------------
 
 
+        //---------AGREGAR DETALLES DE IMPACTO  DE IMPACTO INICIO--------------------------
+        protected async Task GetListaImpactoRcmAsync(int id)
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<MaqImpactoRcmDto>>($"MaqImpactoRcm/{id}");
+                if (_result.State != State.Success)
+                {
+                    listaImapctoRcm = null;
+                    _DialogShow(_result.Message, _result.State);
+                    return;
+                }
+
+                listaImapctoRcm = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
+        private bool popupImpactoRcmView = false;
+        protected async Task ShowBtnImpactoRcmAsync(int v_Id)
+        {
+            await GetListaImpactoRcmAsync(v_Id); // Obtener los datos
+                                                 // Aquí puedes llamar a un método para expandir un diálogo o componente que muestre la lista
+            _TituloPopup = "IMPACTO RCM";
+            _TituloPopup1 = "DETALLE RCM";
+            _TituloPopup2 = v_Id;
+            // Suponiendo que tienes una variable para controlar la visibilidad de tu diálogo de impacto RCM
+            this.popupImpactoRcmView = true; // Asegúrate de tener esta variable definida
+            StateHasChanged();
+        }
+        protected void btnCancelPop2()
+        {
+            this.popupImpactoRcmView = false;
+            StateHasChanged();
+        }
+        //---------AGREGAR DETALLES DE IMPACTO  DE IMPACTO FIN--------------------------
 
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO INICIO--------------------------
-   
+
         private bool popupAdmView1 = false;
-   
+
 
         protected async Task ShowBtnaddElementoAsync(int v_Id)
         {
@@ -425,7 +464,7 @@ namespace Server.Pages.Pages.Maquinaria
             Expandelement();
             _TituloPopup = "REGISTRO - ELEMENTOS ";
             _TituloPopup1 = "ELEMENTOS";
-            _TituloPopup2 = v_Id; 
+            _TituloPopup2 = v_Id;
             this.popupAdmView1 = true;
             StateHasChanged();
         }
@@ -434,12 +473,12 @@ namespace Server.Pages.Pages.Maquinaria
         private void Expandelement()
         {
             popupAdmView1 = true;
-            StateHasChanged(); 
+            StateHasChanged();
         }
         protected void btnCancelPop1()
         {
             this.popupAdmView1 = false;
-            StateHasChanged(); 
+            StateHasChanged();
         }
 
         private async Task onTablaAsynCElementoDetalle(EditContext context)
@@ -454,18 +493,18 @@ namespace Server.Pages.Pages.Maquinaria
             try
             {
                 _Loading.Show();
-                _maqDetalleElement.Idmaquinaria = _TituloPopup2; 
+                _maqDetalleElement.Idmaquinaria = _TituloPopup2;
                 var requestObj = new { maqElemento = _maqDetalleElement };
                 var vrespost = await _Rest.PostAsync<int?>("MaqMaquinaElemento", requestObj);
                 _Loading.Hide();
 
                 if (vrespost.State == State.Success)
                 {
-                    
+
                     await OnTablaDetalleMaqMaquinariaElementoAsync(_TituloPopup2);
                     _maqDetalleElement = new MaqMaquinaElementoDto();
                     _MessageShow("Agregado Correctamente", State.Success);
-                    StateHasChanged(); 
+                    StateHasChanged();
                 }
                 else
                 {
@@ -501,7 +540,7 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
-   
+
 
 
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO fIN--------------------------
@@ -537,7 +576,7 @@ namespace Server.Pages.Pages.Maquinaria
                 _MessageShow(e.Message, State.Error);
             }
         }
-      
+
         protected async Task GetTipoMaquinaria()
         {
             try
@@ -575,13 +614,13 @@ namespace Server.Pages.Pages.Maquinaria
         {
 
             await onTablaAsyncMaquinas();
-            
+
 
             await GetArea();
             jsonColor = System.Text.Json.JsonSerializer.Serialize(AreaList);
             await GetProceso();
             jsonProceso = System.Text.Json.JsonSerializer.Serialize(procesosList);
-           
+
             await GetTipoMaquinaria();
             jsonTipoMaquina = System.Text.Json.JsonSerializer.Serialize(TipoMaquinaList);
 
@@ -590,7 +629,7 @@ namespace Server.Pages.Pages.Maquinaria
 
             //MOSTRAR DATOS DEL DTO
 
-            StateHasChanged();   
+            StateHasChanged();
         }
 
         private async Task OnValidMaquinariaNuevo(EditContext context)
@@ -598,16 +637,16 @@ namespace Server.Pages.Pages.Maquinaria
             await SavePersona();
             Console.WriteLine("OnValidMaquinariaNuevo");
         }
-      
+
 
 
         protected async Task onTablaAsyncMaquinas()
         {
             try
             {
-                _Loading.Show(); 
+                _Loading.Show();
                 var _result = await _Rest.GetAsync<List<MaquinariaDto>>("Maquinaria/Get");
-                
+
                 _Loading.Hide();
                 if (_result.State != State.Success)
                 {
@@ -627,7 +666,7 @@ namespace Server.Pages.Pages.Maquinaria
             {
                 _Loading.Show();
                 Console.WriteLine(".........");
-                var vrespost = await _Rest.PostAsync<int>("Maquinaria", new { _Maquinaria =  _maquinarianuevo} );
+                var vrespost = await _Rest.PostAsync<int>("Maquinaria", new { _Maquinaria = _maquinarianuevo });
                 Console.WriteLine(vrespost.Message);
                 _Loading.Hide();
                 _MessageShow(vrespost.Message, vrespost.State);
@@ -635,7 +674,7 @@ namespace Server.Pages.Pages.Maquinaria
                 if (vrespost.State == State.Success)
                 {
                     await onTablaAsyncMaquinas();
-                    _MessageShow("<b>Registro exitoso</b>",State.Success);
+                    _MessageShow("<b>Registro exitoso</b>", State.Success);
                     _maquinarianuevo = new MaquinariaDto();
                     return;
                 }
@@ -645,7 +684,7 @@ namespace Server.Pages.Pages.Maquinaria
                     _MessageShow(x, State.Warning);
                 });
                 return;
-                
+
             }
             catch (Exception e)
             {
@@ -769,6 +808,6 @@ namespace Server.Pages.Pages.Maquinaria
         }
 
         //----------------------- FIN SECCIÓN FILE UPLOAD -----------------------------
-     
+
     }
 }

@@ -8,7 +8,7 @@ namespace Aplicacion.DTOs.Maquinaria
 {
        public class MaqImpactoRcmBatchDto
     {
-        public int IdMaquinaria { get; set; }
+        public int? IdMaquinaria { get; set; }
         public List<ImpactoItemDto> Impactos { get; set; }
     }
 
