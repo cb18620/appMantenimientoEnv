@@ -10,6 +10,7 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Web;
 using Infraestructura.Models.Clasificador;
 using Infraestructura.Models.Maquinaria;
+using Infraestructura.Models.Vistas;
 
 namespace Server.Pages.Pages.Maquinaria
 {
@@ -22,17 +23,18 @@ namespace Server.Pages.Pages.Maquinaria
         private static List<MaqCaractMaquinariaDto> listadetallesMaquinaria { get; set; }
         private static List<MaqImpactoRcmDto> listaImapctoRcm { get; set; }
         public static List<MaquinariaDto> maquinaria { get; set; }
+        public static List<MaqvImpactoRcmDto> ListVMaquinaria { get; set; }
 
         public MaqCaractVehiculoDto _maqCaractVehiculo = new MaqCaractVehiculoDto();
         public MaqCaractMaquinariaDto _maqCaractMaquinaria = new MaqCaractMaquinariaDto();
         public MaqCaractInfraDto _maqCaractInfra = new MaqCaractInfraDto();
         public MaqMaquinaElementoDto _MaqMaquinaElemento = new MaqMaquinaElementoDto();
 
-        public MaquinariaDto _maquinariaSeleccionada = new MaquinariaDto();
+        public MaqvImpactoRcmDto _maquinariaSeleccionada = new MaqvImpactoRcmDto();
 
         private List<MaqMaquinaElementoDto> listadetallesMaqMaquinariaElemento;
         public MaqMaquinaElementoDto _maqDetalleElement = new MaqMaquinaElementoDto();
-
+        public MaqImpactoRcmDto _maqDetalleImpacto = new MaqImpactoRcmDto();
 
         private bool visible;
 
@@ -56,12 +58,18 @@ namespace Server.Pages.Pages.Maquinaria
         public string jsonProceso { get; set; }
         public string jsonTipoMaquina { get; set; }
         public string jsonElemento { get; set; }
+        public string jsonRcm { get; set; }
+        public string jsonRcmClasificadorValor { get; set; }
+
+
 
         public string ImageBase64 { get; set; }
 
         private static List<GenClasificadorDto> AreaList { get; set; }
         private static List<GenClasificadorDto> procesosList { get; set; }
         private static List<GenClasificadorDto> TipoMaquinaList { get; set; }
+        private static List<GenClasificadorDto> RcmClasificadorValorList { get; set; }
+        private static List<ConfigImpactoDto> ConfigImpactoList { get; set; }
         private static List<MaqElementoDto> TipoElementoList { get; set; }
         private bool FilterFunc2(MaqCaractVehiculoDto element) => FilterFunc2(element, searchString);
         private bool FilterFunc2(MaqCaractVehiculoDto element, string searchString1)
@@ -178,7 +186,7 @@ namespace Server.Pages.Pages.Maquinaria
                 _Loading.Hide();
             }
         }
-        protected async Task ShowBtnadd(MaquinariaDto maquinariaSeleccionada, int v_Id)
+        protected async Task ShowBtnadd(MaqvImpactoRcmDto maquinariaSeleccionada, int v_Id)
         {
             // Asegúrate de inicializar _maqCaractVehiculo antes de utilizarlo
             _maqCaractVehiculo = new MaqCaractVehiculoDto();
@@ -381,10 +389,9 @@ namespace Server.Pages.Pages.Maquinaria
                     _DialogShow(_result.Message, _result.State);
                     return;
                 }
-                //_MessageShow(id.ToString(), State.Success);  
+ 
                 listadetallesInfra = _result.Data;
-                //string clienteJson = JsonConvert.SerializeObject(listadetallesInfra);
-                //_MessageShow(clienteJson, State.Warning);
+
                 StateHasChanged();
             }
             catch (Exception e)
@@ -433,23 +440,80 @@ namespace Server.Pages.Pages.Maquinaria
                 _MessageShow(e.Message, State.Error);
             }
         }
+        private async Task onTablaAsyncImpactoDetalle(EditContext context)
+        {
+            await SaveListaImpactoRcmAsync();
+            Console.WriteLine("OnValidAMedidaNuevo");
+
+
+        }
+
+        protected async Task SaveListaImpactoRcmAsync()
+        {
+            try
+            {
+                _Loading.Show();
+                _maqDetalleImpacto.Idmaquinaria = _TituloPopup2;
+                var requestObj = new { maqImpacto = _maqDetalleImpacto };
+                var vrespost = await _Rest.PostAsync<int?>("MaqImpactoRcm", requestObj);
+                _Loading.Hide();
+
+                if (vrespost.State == State.Success)
+                {
+
+                    await GetListaImpactoRcmAsync(_TituloPopup2);
+                    _maqDetalleImpacto = new MaqImpactoRcmDto();
+                    _MessageShow("Agregado Correctamente", State.Success);
+                    StateHasChanged();
+                }
+                else
+                {
+                    vrespost.Errors.ForEach(x => _MessageShow(x, State.Warning));
+                }
+            }
+            catch (Exception e)
+            {
+                _Loading.Hide();
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
 
         private bool popupImpactoRcmView = false;
         protected async Task ShowBtnImpactoRcmAsync(int v_Id)
         {
-            await GetListaImpactoRcmAsync(v_Id); // Obtener los datos
-                                                 // Aquí puedes llamar a un método para expandir un diálogo o componente que muestre la lista
+            await GetListaImpactoRcmAsync(v_Id); 
+
             _TituloPopup = "IMPACTO RCM";
             _TituloPopup1 = "DETALLE RCM";
             _TituloPopup2 = v_Id;
-            // Suponiendo que tienes una variable para controlar la visibilidad de tu diálogo de impacto RCM
-            this.popupImpactoRcmView = true; // Asegúrate de tener esta variable definida
+
+            this.popupImpactoRcmView = true; 
             StateHasChanged();
         }
         protected void btnCancelPop2()
         {
             this.popupImpactoRcmView = false;
             StateHasChanged();
+        }
+
+        public async Task ShowBtnEliminaImapcto(int idExtraccion)
+        {
+            await _MessageConfirm("Esta seguro de eliminar el registro...?", async () =>
+            {
+                var vrespost = await _Rest.DeleteAsync<int>("MaqImpactoRcm", idExtraccion);
+                if (!vrespost.Succeeded)
+                {
+                    _MessageShow(vrespost.Message, State.Error);
+                }
+                else
+                {
+                    _MessageShow(vrespost.Message, vrespost.State);
+                    //_RowIdsubPlanificaciondetalle = 0;
+                    await GetListaImpactoRcmAsync(_TituloPopup2);
+                    StateHasChanged();
+                }
+            });
         }
         //---------AGREGAR DETALLES DE IMPACTO  DE IMPACTO FIN--------------------------
 
@@ -544,6 +608,38 @@ namespace Server.Pages.Pages.Maquinaria
 
 
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO fIN--------------------------
+        protected async Task GetRcmClasificadorValor()
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<GenClasificadorDto>>("Clasificador/rcm");
+                _Loading.Hide();
+                //_MessageShow(_result.Message, _result.State);
+                if (_result.State != State.Success)
+                    return;
+                RcmClasificadorValorList = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+        protected async Task GetConfigImpactoList()
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<ConfigImpactoDto>>("ConfigImpacto/ConfigImpacto");
+                _Loading.Hide();
+                //_MessageShow(_result.Message, _result.State);
+                if (_result.State != State.Success)
+                    return;
+                ConfigImpactoList = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
         protected async Task GetArea()
         {
             try
@@ -614,6 +710,7 @@ namespace Server.Pages.Pages.Maquinaria
         {
 
             await onTablaAsyncMaquinas();
+            await onTablaAsyncVmaquinas();
 
 
             await GetArea();
@@ -626,6 +723,12 @@ namespace Server.Pages.Pages.Maquinaria
 
             await GetElemento();
             jsonElemento = System.Text.Json.JsonSerializer.Serialize(TipoElementoList);
+
+            await GetConfigImpactoList();
+            jsonRcm = System.Text.Json.JsonSerializer.Serialize(ConfigImpactoList);
+
+            await GetRcmClasificadorValor();
+            jsonRcmClasificadorValor = System.Text.Json.JsonSerializer.Serialize(RcmClasificadorValorList);
 
             //MOSTRAR DATOS DEL DTO
 
@@ -660,6 +763,27 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
+        //vISTA MAQUINARIA CON CRITICIDAD
+        protected async Task onTablaAsyncVmaquinas()
+        {
+            try
+            {
+                _Loading.Show();
+                var _result = await _Rest.GetAsync<List<MaqvImpactoRcmDto>>("VImpactoRcm/impacto");
+
+                _Loading.Hide();
+                if (_result.State != State.Success)
+                {
+                    _DialogShow(_result.Message, _result.State);
+                }
+                ListVMaquinaria = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
         protected async Task SavePersona()
         {
             try
@@ -673,7 +797,7 @@ namespace Server.Pages.Pages.Maquinaria
 
                 if (vrespost.State == State.Success)
                 {
-                    await onTablaAsyncMaquinas();
+                    await onTablaAsyncVmaquinas();
                     _MessageShow("<b>Registro exitoso</b>", State.Success);
                     _maquinarianuevo = new MaquinariaDto();
                     return;
@@ -693,7 +817,7 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
-        protected async Task EditPersona(MaquinariaDto dtoPersona)
+        protected async Task EditPersona(MaqvImpactoRcmDto dtoPersona)
         {
             try
             {
@@ -734,19 +858,19 @@ namespace Server.Pages.Pages.Maquinaria
                 {
                     _MessageShow(vrespost.Message, vrespost.State);
                     //_RowIdsubPlanificaciondetalle = 0;
-                    await onTablaAsyncMaquinas();
+                    await onTablaAsyncVmaquinas();
                     StateHasChanged();
                 }
             });
         }
         protected void ShowBtnEditCancelPersona(int v_idpersona)
         {
-            var vpersona = maquinaria.First(f => f.Idmaquinaria == v_idpersona);
+            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
             vpersona.VerDetalle = !vpersona.VerDetalle;
         }
         protected void ShowBtnEdit(int v_idpersona)
         {
-            var vpersona = maquinaria.First(f => f.Idmaquinaria == v_idpersona);
+            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
             vpersona.VerDetalle = !vpersona.VerDetalle;
         }
         // ---------------------- SECCIÓN DE FILE UPLOAD ----------------------------

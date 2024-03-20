@@ -32,12 +32,25 @@ namespace WebApi.Controllers.v1.Maquinarias
         {
             return Ok(await Mediator.Send(new GetAllImpactoRCMQuery()));
         }
-        //[HttpPost("CreateBatchMaqImpactoRcm")]
-        //[Authorize]
-        //public async Task<IActionResult> CreateBatchMaqImpactoRcm([FromBody] CreateMaqImpactoRcmBatchCommand command)
-        //{
-        //    return Ok(await Mediator.Send(command));
-        //}
+        [HttpPost("CreateBatchMaqImpactoRcm")]
+        [Authorize]
+        public async Task<IActionResult> CreateBatchMaqImpactoRcm([FromBody] CreateMaqImpactoRcmBatchCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Post(CreateMaqImpactoCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await Mediator.Send(new DeleteMaqImpactoCommand { IdMaqImpacto = id }));
+        }
 
     }
 }

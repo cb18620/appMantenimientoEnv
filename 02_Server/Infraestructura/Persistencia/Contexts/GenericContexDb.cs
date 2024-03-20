@@ -2,6 +2,7 @@
 using Dominio.Entities;
 using Dominio.Entities.Seguridad;
 using Dominio.Entities.Seguridadmetricas;
+using Dominio.Entities.Vistas;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -28,6 +29,7 @@ namespace Persistencia.Contexts
         public DbSet<MaqCaractVehiculo> MaqCaractVehiculo { get; set; }
         public DbSet<MaqImpactoRcm> MaqImpactoRcm { get; set; }    
         public DbSet<ConfigImpacto> ConfigImpacto { get; set; }
+        public DbSet<MaqvImpactoRcm> MaqvImpactoRcm { get; set; }  
 
        #endregion
 

@@ -2,11 +2,13 @@
 using Aplicacion.DTOs.Maquinaria;
 using Aplicacion.DTOs.Parametricas;
 using Aplicacion.DTOs.Segurity;
+using Aplicacion.DTOs.Vistas;
 using Aplicacion.Features.Aplicacion.Parametricas.Commands;
 using AutoMapper;
 using Dominio.Entities;
 using Dominio.Entities.Seguridad;
 using Dominio.Entities.Seguridadmetricas;
+using Dominio.Entities.Vistas;
 
 namespace Aplicacion.Mappings
 {
@@ -28,6 +30,7 @@ namespace Aplicacion.Mappings
             CreateMap<MaqCaractVehiculo, MaqCaractVehiculoDto>();
             CreateMap<MaqImpactoRcm, MaqImpactoRcmDto>();
             CreateMap<ConfigImpacto, ConfigImpactoDto>();
+            CreateMap<MaqvImpactoRcm, MaqvImpactoRcmDto>();
   
             /**///**
 
@@ -49,6 +52,7 @@ namespace Aplicacion.Mappings
             CreateMap<MaqImpactoRcmDto, MaqImpactoRcm>();
             CreateMap<ImpactoItemDto, MaqImpactoRcm>();
             CreateMap<ConfigImpactoDto, ConfigImpacto>();
+            CreateMap<MaqvImpactoRcmDto, MaqvImpactoRcm>(); 
 
 
             #endregion 
