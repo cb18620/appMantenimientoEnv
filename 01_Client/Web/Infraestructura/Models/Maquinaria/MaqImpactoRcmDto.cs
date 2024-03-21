@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Infraestructura.Models.Maquinaria
 {
     public class MaqImpactoRcmDto
-    {
+    { 
         public int IdmaqImpactoRcm { get; set; }
         public int? Idmaquinaria { get; set; }
         public MaquinariaDto Maquinaria { get; set; }

@@ -28,6 +28,7 @@ namespace WebApi.Controllers.v1.Maquinarias
         {
             return Ok(await Mediator.Send(new DeleteMaqElementoCommand { Idelemento = id }));
         }
+
         [HttpPut("{id}")]
         [Authorize]
         public async Task<IActionResult> Put(int id, UpdateMaqElementoCommand command)

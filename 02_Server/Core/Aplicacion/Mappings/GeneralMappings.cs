@@ -31,6 +31,11 @@ namespace Aplicacion.Mappings
             CreateMap<MaqImpactoRcm, MaqImpactoRcmDto>();
             CreateMap<ConfigImpacto, ConfigImpactoDto>();
             CreateMap<MaqvImpactoRcm, MaqvImpactoRcmDto>();
+
+            CreateMap<MaqMaquinaRepuesto, MaqMaquinaRepuestoDto>();
+            CreateMap<MaqRepuesto, MaqRepuestoDto>();
+            CreateMap<MaqMaquinaConsumible, MaqMaquinaConsumibleDto>();
+            CreateMap<MaqConsumible, MaqConsumibleDto>();
   
             /**///**
 
@@ -52,7 +57,12 @@ namespace Aplicacion.Mappings
             CreateMap<MaqImpactoRcmDto, MaqImpactoRcm>();
             CreateMap<ImpactoItemDto, MaqImpactoRcm>();
             CreateMap<ConfigImpactoDto, ConfigImpacto>();
-            CreateMap<MaqvImpactoRcmDto, MaqvImpactoRcm>(); 
+            CreateMap<MaqvImpactoRcmDto, MaqvImpactoRcm>();
+
+            CreateMap<MaqMaquinaRepuestoDto, MaqMaquinaRepuesto>();
+            CreateMap<MaqRepuestoDto, MaqRepuesto>();
+            CreateMap<MaqMaquinaConsumibleDto, MaqMaquinaConsumible>();
+            CreateMap<MaqConsumibleDto, MaqConsumible>();
 
 
             #endregion 

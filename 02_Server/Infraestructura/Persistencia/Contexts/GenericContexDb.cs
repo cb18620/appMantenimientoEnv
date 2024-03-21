@@ -30,6 +30,10 @@ namespace Persistencia.Contexts
         public DbSet<MaqImpactoRcm> MaqImpactoRcm { get; set; }    
         public DbSet<ConfigImpacto> ConfigImpacto { get; set; }
         public DbSet<MaqvImpactoRcm> MaqvImpactoRcm { get; set; }  
+        public DbSet<MaqMaquinaRepuesto> MaqMaquinaRepuesto { get; set; }  
+        public DbSet<MaqRepuesto> MaqRepuesto { get; set; }  
+        public DbSet<MaqMaquinaConsumible> MaqMaquinaConsumible { get; set; }  
+        public DbSet<MaqConsumible> MaqConsumible { get; set; }  
 
        #endregion
 

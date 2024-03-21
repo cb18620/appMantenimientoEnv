@@ -11,6 +11,7 @@ using SixLabors.ImageSharp.Web;
 using Infraestructura.Models.Clasificador;
 using Infraestructura.Models.Maquinaria;
 using Infraestructura.Models.Vistas;
+using Microsoft.JSInterop;
 
 namespace Server.Pages.Pages.Maquinaria
 {
@@ -78,6 +79,8 @@ namespace Server.Pages.Pages.Maquinaria
                 return true;
             return false;
         }
+       
+
 
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  VEHICULOS INICIO
         private async Task onTablaAsyncVehiculoDetalle(EditContext context)
@@ -331,6 +334,24 @@ namespace Server.Pages.Pages.Maquinaria
                 _Loading.Hide();
             }
         }
+        public async Task ShowBtnEliminarmaquiniariaDetalle(int idExtraccion)
+        {
+            await _MessageConfirm("Esta seguro de eliminar el registro...?", async () =>
+            {
+                var vrespost = await _Rest.DeleteAsync<int>("MaqCaractMaquinaria", idExtraccion);
+                if (!vrespost.Succeeded)
+                {
+                    _MessageShow(vrespost.Message, State.Error);
+                }
+                else
+                {
+                    _MessageShow(vrespost.Message, vrespost.State);
+                    //_RowIdsubPlanificaciondetalle = 0;
+                    await onTablaAsyncdetalleMaquinaria(_TituloPopup2);
+                    StateHasChanged();
+                }
+            });
+        }
         //---------AGREGAR FUNCIONES DEL DETALLE DETALLE  MAQUINARIAS FIN FIN FIN--------------------------
 
         //---------AGREGAR FUNCIONES DEL DETALLE DETALLE  INFRAESTRUCTURA INICIO--------------------------
@@ -517,6 +538,56 @@ namespace Server.Pages.Pages.Maquinaria
         }
         //---------AGREGAR DETALLES DE IMPACTO  DE IMPACTO FIN--------------------------
 
+        //AGREGAR FUNCIONES DEL DETALLE DETALLE  CONSUMIBLES  INICIO
+        public static List<MaqMaquinaConsumibleDto> listadetallesMaqMaquinariaConsumibles { get; set; }
+
+        protected async Task GetListaConsumibledetalleAsync(int id)
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<MaqMaquinaConsumibleDto>>($"MaqMaquinaConsumible/{id}");
+                if (_result.State != State.Success)
+                {
+                    listadetallesMaqMaquinariaConsumibles = null;
+                    _DialogShow(_result.Message, _result.State);
+                    return;
+                }
+
+                listadetallesMaqMaquinariaConsumibles = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
+        //AGREGAR FUNCIONES DEL DETALLE DETALLE  CONSUMIBLES  FIN
+
+        //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS  INICIO
+        public static List<MaqMaquinaRepuestoDto> listadetallesMaqMaquinariaRepuestos { get; set; }
+
+        protected async Task GetListaRepuestodetalleAsync(int id)
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<MaqMaquinaRepuestoDto>>($"MaqMaquinaRepuesto/{id}");
+                if (_result.State != State.Success)
+                {
+                    listadetallesMaqMaquinariaRepuestos = null;
+                    _DialogShow(_result.Message, _result.State);
+                    return;
+                }
+
+                listadetallesMaqMaquinariaRepuestos = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
+        //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS  FIN
+
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO INICIO--------------------------
 
         private bool popupAdmView1 = false;
@@ -525,6 +596,8 @@ namespace Server.Pages.Pages.Maquinaria
         protected async Task ShowBtnaddElementoAsync(int v_Id)
         {
             await OnTablaDetalleMaqMaquinariaElementoAsync(v_Id);
+            await GetListaRepuestodetalleAsync(v_Id);
+            await GetListaConsumibledetalleAsync(v_Id);
             Expandelement();
             _TituloPopup = "REGISTRO - ELEMENTOS ";
             _TituloPopup1 = "ELEMENTOS";
@@ -872,6 +945,21 @@ namespace Server.Pages.Pages.Maquinaria
         {
             var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
             vpersona.VerDetalle = !vpersona.VerDetalle;
+        }
+
+        public async Task repjasper(int IdMaqMaquinaria)
+        {
+
+            //Parametros en jasper "orden_produccion"
+
+
+            await JSRuntime.InvokeVoidAsync("CargaReportePop",
+            new
+            {            //reports/ENVIBOL/PRODUCCION/Calidad/Inspeccion_critico
+                ruta = "/reports/ENVIBOL/MANTENIMIENTO/Catalogo_de_equipos/Ficha_Tecnica",
+                idmaquinaria = IdMaqMaquinaria,
+
+            });
         }
         // ---------------------- SECCIÓN DE FILE UPLOAD ----------------------------
         public async Task OnFileChange(MaquinariaDto aa, InputFileChangeEventArgs e)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructura.Models.Maquinaria
 {
-    public class MaqElementoDto
+    public class MaqElementoDto 
     {
         public int Idelemento { get; set; }
         public string Descripcion { get; set; }

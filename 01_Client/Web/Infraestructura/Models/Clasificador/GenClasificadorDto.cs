@@ -9,7 +9,7 @@ namespace Infraestructura.Models.Clasificador
 {
     public partial class GenClasificadorDto
     {
-        public int IdgenClasificador { get; set; }
+        public int IdgenClasificador { get; set; } = 10000000;
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [Range(1, int.MaxValue, ErrorMessage = "Seleccione un tipo de clasificador.")]
         public int IdgenClasificadortipo { get; set; }

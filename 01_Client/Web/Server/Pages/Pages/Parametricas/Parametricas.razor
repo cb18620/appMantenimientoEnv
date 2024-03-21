@@ -14,6 +14,8 @@
                     <MudCardContent>
                         <MudGrid>
 
+                            
+
                             <MudItem xs="12" sm="6" md="4">
                                 <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Tipo (*)</strong></MudText>
                                 <MudSelect Required="true" @bind-Value="_ClasificadorNuevo.IdgenClasificadortipo" For="@(() => _ClasificadorNuevo.IdgenClasificadortipo)" Variant="Variant.Outlined" Margin="Margin.Dense">
@@ -27,14 +29,18 @@
                                     }
                                 </MudSelect>
                             </MudItem>
+                            @* <MudItem xs="12" sm="6" md="4">
+                                <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Descripcion (*)</strong></MudText>
+                                <MudTextField Placeholder="Numero" Required="true" @bind-Value="_ClasificadorNuevo.IdgenClasificador" For="@(() => _ClasificadorNuevo.IdgenClasificador)" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem> *@
                             <MudItem xs="12" sm="6" md="4">
                                 <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Descripcion (*)</strong></MudText>
                                 <MudTextField Placeholder="Nombre del Clasificador" Required="true" @bind-Value="_ClasificadorNuevo.Descripcion" For="@(() => _ClasificadorNuevo.Descripcion)" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
                             </MudItem>
-                            <MudItem xs="12" sm="6" md="4">
+                          @*   <MudItem xs="12" sm="6" md="4">
                                 <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Valor 2 </strong></MudText>
                                 <MudTextField Placeholder="Valor opcional" @bind-Value="_ClasificadorNuevo.Valor2" For="@(() => _ClasificadorNuevo.Valor2)" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
-                            </MudItem>
+                            </MudItem> *@
 
                         </MudGrid>
                     </MudCardContent>
@@ -61,7 +67,7 @@
                         <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.IdgenClasificador)" InitialDirection="MudBlazor.SortDirection.Descending">Nº</MudTableSortLabel></MudTh>
                         <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.IdgenClasificadortipo)">Tipo</MudTableSortLabel></MudTh>
                         <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Descripcion)">Descripcion</MudTableSortLabel></MudTh>
-
+                        <MudTh><MudTableSortLabel SortBy="new Func<GenClasificadorDto, object>(x=>x.Valor4)">Valor</MudTableSortLabel></MudTh>
                         <MudTh>Opciones</MudTh>
                     </HeaderContent>
                     <RowTemplate>
@@ -73,6 +79,9 @@
                         </MudTd>
                         <MudTd>
                             <MudLink Typo="Typo.caption">@context.Descripcion</MudLink><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudLink Typo="Typo.caption">@context.Valor4</MudLink><br />
                         </MudTd>
 
 
