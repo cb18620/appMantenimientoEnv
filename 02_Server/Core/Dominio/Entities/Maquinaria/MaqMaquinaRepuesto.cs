@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Dominio.Entities
 {
     [Table("maq_maquina_repuesto", Schema = "public")]
-    public class MaqMaquinaRepuesto : AuditableBaseEntity
+    public class MaqMaquinaRepuesto : AuditableBaseEntity 
     {
         [Key]
         public int IdmaqMaquinaRepuesto { get; set; }

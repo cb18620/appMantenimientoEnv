@@ -65,10 +65,7 @@
                             <MudItem xs="12" sm="6" md="2">
                                 <MudTextField @bind-Value="_maquinarianuevo.Año" For="@(() => _maquinarianuevo.Año)" Label="AÑO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
                             </MudItem>
-                            @*
-                            <MudItem xs="12" sm="6" md="2">
-                            <MudTextField @bind-Value="_maquinarianuevo.Fabricante" For="@(() => _maquinarianuevo.Fabricante)" Label="FABRICANTE" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
-                            </MudItem> *@
+                           
                             <MudItem xs="12" sm="6" md="2">
                                 <MudTextField @bind-Value="_maquinarianuevo.Industria" For="@(() => _maquinarianuevo.Industria)" Label="INDUSTRIA" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
                             </MudItem>
@@ -99,6 +96,10 @@
                                     }
                                 </div>
                             </MudItem>
+                             
+                            <MudItem xs="12" sm="6" md="2">
+                            <MudTextField @bind-Value="_maquinarianuevo.Descripcion" For="@(() => _maquinarianuevo.Descripcion)" Label="DESCRIPCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                            </MudItem>
 
 
 
@@ -113,12 +114,18 @@
 
             <MudCard>
 
-
-                <MudTable Items="@ListVMaquinaria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                <MudTable Items="@ListVMaquinaria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="FilterByMaquinaria">
                     <ToolBarContent>
-
                         <MudSpacer />
-                        <MudTextField @bind-Value="searchString" Placeholder="Buscar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                        <MudGrid>
+                            <MudItem xs="11">
+                                <MudTextField @bind-Value="maquinasSearchString" Placeholder="Buscar Maquinas" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+
+                            </MudItem>
+                            <MudItem xs="1">
+                                <MudIconButton Icon="@Icons.Material.Filled.Mic" OnClick="(e) => { }" Class="mt-0" />
+                            </MudItem>
+                        </MudGrid>
                     </ToolBarContent>
                     <HeaderContent>
                         <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Idmaquinaria)">N°</MudTableSortLabel></MudTh>
@@ -185,6 +192,7 @@
                         <MudTd>
                             <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
                         </MudTd>
+                      
 
                         <MudTd class="sobreponer">
 
@@ -864,7 +872,7 @@
                     <Content>
                         <MudCardContent>
                             <MudTabs>
-                                <MudTabPanel Text="Gestión de Elemento">
+                                <MudTabPanel Text="Gestión de Componentes">
                                     <MudCard>
                                         <EditForm OnValidSubmit="onTablaAsynCElementoDetalle" Model="_maqDetalleElement">
                                             <DataAnnotationsValidator />
@@ -876,7 +884,7 @@
                                                                             NameValue="Idelemento"
                                                                             NameDescripcion="Descripcion"
                                                         @bind-DataValue="@_maqDetalleElement.Idelemento"
-                                                                            pPlaceHolder="Seleccione un elemento" />
+                                                                            pPlaceHolder="Seleccione un componente" />
                                                     </MudItem>
                                                 </MudGrid>
                                             </MudCardContent>
@@ -889,7 +897,8 @@
                                         <MudTable Items="@listadetallesMaqMaquinariaElemento" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                                             <HeaderContent>
                                                 <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.IdmaquinaElemento)">Nr</MudTableSortLabel></MudTh>
-                                                <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.MaqElement.Descripcion)">Idelement</MudTableSortLabel></MudTh>
+                                                <MudTh><MudTableSortLabel SortBy="new Func<MaqMaquinaElementoDto, object>(x=>x.MaqElement.Descripcion)">Descripcion</MudTableSortLabel></MudTh>
+                                                <MudTh>Codigo</MudTh>
                                                 <MudTh>Opciones</MudTh>
                                             </HeaderContent>
                                             <RowTemplate>
@@ -900,8 +909,20 @@
                                                     <MudText Typo="Typo.caption">@context.MaqElement.Descripcion</MudText><br />
                                                 </MudTd>
                                                 <MudTd>
+                                                    <MudText Typo="Typo.caption">@context.MaqElement.Funcion</MudText><br />
+                                                </MudTd>
+                                                <MudTd>
+
                                                     <div class="d-flex">
-                                                        <div class="ml-auto">
+                                                        <div class="m-auto">
+
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarElemento(context.IdmaquinaElemento))" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+
+
+
+
                                                         </div>
                                                     </div>
                                                 </MudTd>
@@ -914,7 +935,26 @@
                                 </MudTabPanel>
 
                                 <MudTabPanel Text="Gestion de Repuestos">
-                                   
+                                    <MudCard>
+                                        <EditForm OnValidSubmit="onTablaAsynMaqMaquinaRepuestoDetalle" Model="_postMaqMaquinaRepuesto">
+                                            <DataAnnotationsValidator />
+                                            <MudCardContent>
+                                                <MudGrid>
+                                                    <MudItem xs="12" sm="6" md="12">
+                                                        <CustomAutoComplete TItem="MaqRepuestoDto"
+                                                                            jsonData="@jsonRepuesto"
+                                                                            NameValue="IdmaqRepuesto"
+                                                                            NameDescripcion="Detalle"
+                                                        @bind-DataValue="@_postMaqMaquinaRepuesto.IdmaqRepuesto"
+                                                                            pPlaceHolder="Seleccione un repuesto " />
+                                                    </MudItem>
+                                                </MudGrid>
+                                            </MudCardContent>
+                                            <MudCardActions>
+                                                <MudButton style="margin-right: 10px;" OnClick="@(() => SaveMaqMaquinaRepuestoDetalle())" Variant="Variant.Filled" Color="Color.Success">Guardar</MudButton>
+                                            </MudCardActions>
+                                        </EditForm>
+                                    </MudCard>
                                     <MudCard>
                                         <MudTable Items="@listadetallesMaqMaquinariaRepuestos" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                                             <HeaderContent>
@@ -935,24 +975,53 @@
                                                 <MudTd>
                                                     <MudText Typo="Typo.caption">@context.Repuesto.Codigo</MudText><br />
                                                 </MudTd>
-                                               
-                                                
+
+
                                                 <MudTd>
+
                                                     <div class="d-flex">
-                                                        <div class="ml-auto">
+                                                        <div class="m-auto">
+
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarRepuesto(context.IdmaqMaquinaRepuesto))" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+
+
+
+
                                                         </div>
                                                     </div>
                                                 </MudTd>
                                             </RowTemplate>
                                         </MudTable>
-                                        @* <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => NavigationManager.NavigateTo("/Maquinaria/elemento"))">
-                                            Agregar un nuevo Elemento
-                                        </MudButton> *@
+                                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => NavigationManager.NavigateTo("/Maquinaria/elemento"))">
+                                            Agregar un nuevo Repuesto
+                                        </MudButton>
                                     </MudCard>
                                 </MudTabPanel>
 
 
                                 <MudTabPanel Text="Gestion de Consumibles">
+                                    <MudCard>
+                                        <EditForm OnValidSubmit="onTablaAsynMaqMaquinaConsumibleDetalle" Model="_postMaqMaquinaConsumible">
+                                            <DataAnnotationsValidator />
+                                            <MudCardContent>
+                                                <MudGrid>
+                                                    <MudItem xs="12" sm="6" md="12">
+                                                        <CustomAutoComplete TItem="MaqConsumibleDto"
+                                                                            jsonData="@jsonConsumible"
+                                                                            NameValue="IdmaqConsumible"
+                                                                            NameDescripcion="Detalle"
+                                                        @bind-DataValue="@_postMaqMaquinaConsumible.IdmaqConsumible"
+                                                                            pPlaceHolder="Seleccione un consumible " />
+                                                    </MudItem>
+                                                </MudGrid>
+                                            </MudCardContent>
+                                            <MudCardActions>
+                                                <MudButton style="margin-right: 10px;" OnClick="@(() => SaveMaqMaquinaConsumibleDetalle())" Variant="Variant.Filled" Color="Color.Success">Guardar</MudButton>
+                                            </MudCardActions>
+                                        </EditForm>
+                                    </MudCard>
                                     <MudCard>
                                         <MudTable Items="@listadetallesMaqMaquinariaConsumibles" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                                             <HeaderContent>
@@ -980,16 +1049,25 @@
 
 
                                                 <MudTd>
+
                                                     <div class="d-flex">
-                                                        <div class="ml-auto">
+                                                        <div class="m-auto">
+                                                           
+                                                            <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
+                                                                <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarConsumible(context.IdmaqMaquinaConsumible))" /><MudText Typo="Typo.caption"></MudText>
+                                                            </MudTooltip>
+
+
+
+
                                                         </div>
                                                     </div>
                                                 </MudTd>
                                             </RowTemplate>
                                         </MudTable>
-                                        @* <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => NavigationManager.NavigateTo("/Maquinaria/elemento"))">
-                                        Agregar un nuevo Elemento
-                                        </MudButton> *@
+                                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => NavigationManager.NavigateTo("/Maquinaria/elemento"))">
+                                        Agregar un nuevo Consumible
+                                        </MudButton>
                                     </MudCard>
                                 </MudTabPanel>
 

@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Processing; 
 using SixLabors.ImageSharp.Web;
 using Infraestructura.Models.Clasificador;
 using Infraestructura.Models.Maquinaria;
 using Infraestructura.Models.Vistas;
 using Microsoft.JSInterop;
+using Dominio.Entities;
 
 namespace Server.Pages.Pages.Maquinaria
 {
@@ -49,6 +50,16 @@ namespace Server.Pages.Pages.Maquinaria
         private bool bordered = true;
         private bool striped2 = true;
         //private bool bordered2 = true;
+        private string maquinasSearchString = "";
+        private bool FilterByMaquinaria(MaqvImpactoRcmDto element)
+        {
+            if (string.IsNullOrWhiteSpace(maquinasSearchString))
+                return true;
+            bool matchesNombreMaquina = element.NombreMaquina?.ToString().Contains(maquinasSearchString, StringComparison.OrdinalIgnoreCase) ?? false;
+            bool matchesIdentificador = element.Identificador?.ToString().Contains(maquinasSearchString, StringComparison.OrdinalIgnoreCase) ?? false;
+            bool matchesDesProceso = element.DesProceso?.ToString().Contains(maquinasSearchString, StringComparison.OrdinalIgnoreCase) ?? false;
+            return matchesNombreMaquina || matchesIdentificador || matchesDesProceso;
+        }
 
         private bool popupAdmView { get; set; } = false;
 
@@ -59,6 +70,8 @@ namespace Server.Pages.Pages.Maquinaria
         public string jsonProceso { get; set; }
         public string jsonTipoMaquina { get; set; }
         public string jsonElemento { get; set; }
+        public string jsonRepuesto { get; set; }
+        public string jsonConsumible { get; set; }
         public string jsonRcm { get; set; }
         public string jsonRcmClasificadorValor { get; set; }
 
@@ -72,6 +85,8 @@ namespace Server.Pages.Pages.Maquinaria
         private static List<GenClasificadorDto> RcmClasificadorValorList { get; set; }
         private static List<ConfigImpactoDto> ConfigImpactoList { get; set; }
         private static List<MaqElementoDto> TipoElementoList { get; set; }
+        private static List<MaqRepuestoDto> TipoRepuestoList { get; set; }
+        private static List<MaqConsumibleDto> TipoConsumibleList { get; set; }
         private bool FilterFunc2(MaqCaractVehiculoDto element) => FilterFunc2(element, searchString);
         private bool FilterFunc2(MaqCaractVehiculoDto element, string searchString1)
         {
@@ -540,7 +555,44 @@ namespace Server.Pages.Pages.Maquinaria
 
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  CONSUMIBLES  INICIO
         public static List<MaqMaquinaConsumibleDto> listadetallesMaqMaquinariaConsumibles { get; set; }
+        public MaqMaquinaConsumibleDto _postMaqMaquinaConsumible = new MaqMaquinaConsumibleDto();
 
+        private async Task onTablaAsynMaqMaquinaConsumibleDetalle(EditContext context)
+        {
+            await SaveMaqMaquinaConsumibleDetalle();
+            Console.WriteLine("OnValidAMedidaNuevo");
+
+
+        }
+        protected async Task SaveMaqMaquinaConsumibleDetalle()
+        { 
+            try
+            {
+                _Loading.Show();
+                _postMaqMaquinaConsumible.Idmaquinaria = _TituloPopup2;
+                var requestObj = new { maqMaquinaConsumible = _postMaqMaquinaConsumible };
+                var vrespost = await _Rest.PostAsync<int?>("MaqMaquinaConsumible", requestObj);
+                _Loading.Hide();
+
+                if (vrespost.State == State.Success)
+                {
+
+                    await GetListaConsumibledetalleAsync(_TituloPopup2);
+                    _postMaqMaquinaConsumible = new MaqMaquinaConsumibleDto();
+                    _MessageShow("Agregado Correctamente", State.Success);
+                    StateHasChanged();
+                }
+                else
+                {
+                    vrespost.Errors.ForEach(x => _MessageShow(x, State.Warning));
+                }
+            }
+            catch (Exception e)
+            {
+                _Loading.Hide();
+                _MessageShow(e.Message, State.Error);
+            }
+        }
         protected async Task GetListaConsumibledetalleAsync(int id)
         {
             try
@@ -561,11 +613,32 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
+        public async Task ShowBtnEliminarConsumible(int IdmaqMaquinaConsumible)
+        {
+
+            await _MessageConfirm("�Esta seguro de eliminar el registro?", async () =>
+            {
+                var vrespost = await _Rest.DeleteAsync<int>("MaqMaquinaConsumible", IdmaqMaquinaConsumible);
+                if (!vrespost.Succeeded)
+                {
+                    _MessageShow(vrespost.Message, State.Error);
+                }
+                else
+                {
+                    _MessageShow(vrespost.Message, vrespost.State);
+                    //_RowIdsubPlanificaciondetalle = 0;
+                    await GetListaConsumibledetalleAsync(_TituloPopup2);
+                    StateHasChanged();
+                }
+            });
+        }
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  CONSUMIBLES  FIN
 
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS  INICIO
         public static List<MaqMaquinaRepuestoDto> listadetallesMaqMaquinariaRepuestos { get; set; }
+        public MaqMaquinaRepuestoDto _postMaqMaquinaRepuesto = new MaqMaquinaRepuestoDto();
 
+    
         protected async Task GetListaRepuestodetalleAsync(int id)
         {
             try
@@ -586,6 +659,61 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
+        private async Task onTablaAsynMaqMaquinaRepuestoDetalle(EditContext context)
+        {
+            await SaveMaqMaquinaRepuestoDetalle();
+            Console.WriteLine("OnValidAMedidaNuevo");
+
+
+        }
+        protected async Task SaveMaqMaquinaRepuestoDetalle()
+        {
+            try
+            {
+                _Loading.Show();
+                _postMaqMaquinaRepuesto.Idmaquinaria = _TituloPopup2;
+                var requestObj = new { maqMaquinaRepuesto = _postMaqMaquinaRepuesto };
+                var vrespost = await _Rest.PostAsync<int?>("MaqMaquinaRepuesto", requestObj);
+                _Loading.Hide();
+
+                if (vrespost.State == State.Success)
+                {
+
+                    await GetListaRepuestodetalleAsync(_TituloPopup2);
+                    _postMaqMaquinaRepuesto = new MaqMaquinaRepuestoDto();
+                    _MessageShow("Agregado Correctamente", State.Success);
+                    StateHasChanged();
+                }
+                else
+                {
+                    vrespost.Errors.ForEach(x => _MessageShow(x, State.Warning));
+                }
+            }
+            catch (Exception e)
+            {
+                _Loading.Hide();
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+        public async Task ShowBtnEliminarRepuesto(int IdmaqMaquinaRepuesto)
+        {
+
+            await _MessageConfirm("�Esta seguro de eliminar el registro?", async () =>
+            {
+                var vrespost = await _Rest.DeleteAsync<int>("MaqMaquinaRepuesto", IdmaqMaquinaRepuesto);
+                if (!vrespost.Succeeded)
+                {
+                    _MessageShow(vrespost.Message, State.Error);
+                }
+                else
+                {
+                    _MessageShow(vrespost.Message, vrespost.State);
+                    //_RowIdsubPlanificaciondetalle = 0;
+                    await GetListaRepuestodetalleAsync(_TituloPopup2);
+                    StateHasChanged();
+                }
+            });
+        }
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS  FIN
 
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO INICIO--------------------------
@@ -677,7 +805,25 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
+        public async Task ShowBtnEliminarElemento(int IdmaqMaquinaElemento)
+        {
 
+            await _MessageConfirm("�Esta seguro de eliminar el registro?", async () =>
+            {
+                var vrespost = await _Rest.DeleteAsync<int>("MaqMaquinaElemento", IdmaqMaquinaElemento);
+                if (!vrespost.Succeeded)
+                {
+                    _MessageShow(vrespost.Message, State.Error);
+                }
+                else
+                {
+                    _MessageShow(vrespost.Message, vrespost.State);
+                    //_RowIdsubPlanificaciondetalle = 0;
+                    await OnTablaDetalleMaqMaquinariaElementoAsync(_TituloPopup2);
+                    StateHasChanged();
+                }
+            });
+        }
 
 
         //---------AGREGAR DETALLES DE ELEMENTO  DE ELEMENTO fIN--------------------------
@@ -777,12 +923,44 @@ namespace Server.Pages.Pages.Maquinaria
             {
                 _MessageShow(e.Message, State.Error);
             }
+        } 
+        protected async Task GetRepuesto()
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<MaqRepuestoDto>>("MaqRepuesto/Get");
+                _Loading.Hide();
+                //_MessageShow(_result.Message, _result.State);
+                if (_result.State != State.Success)
+                    return;
+                TipoRepuestoList = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+        protected async Task GetConsumible()
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<MaqConsumibleDto>>("MaqConsumible/Get");
+                _Loading.Hide();
+                //_MessageShow(_result.Message, _result.State);
+                if (_result.State != State.Success)
+                    return;
+                TipoConsumibleList = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
         }
 
         protected override async void OnInitialized()
         {
 
-            await onTablaAsyncMaquinas();
+            //await onTablaAsyncMaquinas();
             await onTablaAsyncVmaquinas();
 
 
@@ -795,7 +973,13 @@ namespace Server.Pages.Pages.Maquinaria
             jsonTipoMaquina = System.Text.Json.JsonSerializer.Serialize(TipoMaquinaList);
 
             await GetElemento();
-            jsonElemento = System.Text.Json.JsonSerializer.Serialize(TipoElementoList);
+            jsonElemento = System.Text.Json.JsonSerializer.Serialize(TipoElementoList); 
+
+            await GetRepuesto();
+            jsonRepuesto = System.Text.Json.JsonSerializer.Serialize(TipoRepuestoList);
+
+            await GetConsumible();
+            jsonConsumible = System.Text.Json.JsonSerializer.Serialize(TipoConsumibleList);
 
             await GetConfigImpactoList();
             jsonRcm = System.Text.Json.JsonSerializer.Serialize(ConfigImpactoList);

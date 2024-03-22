@@ -6,7 +6,7 @@
 
 <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true">
 
-    <MudTabPanel Text="GESTION DE ELEMENTOS ">
+    <MudTabPanel Text="GESTION DE COMPONENTES">
         <div>
             <MudCard>
                 <EditForm OnValidSubmit="OnValidElementoNuevo" Model="_maqElemento">
@@ -17,7 +17,7 @@
                                 <MudTextField @bind-Value="_maqElemento.Descripcion" For="@(() => _maqElemento.Descripcion)" Label="DESCRIPCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
                             </MudItem> 
                             <MudItem xs="12" sm="6" md="4">
-                                <MudTextField @bind-Value="_maqElemento.Funcion" For="@(() => _maqElemento.Funcion)" Label="FUNCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                <MudTextField @bind-Value="_maqElemento.Funcion" For="@(() => _maqElemento.Funcion)" Label="CODIGO" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
                             </MudItem>
                         </MudGrid>
                     </MudCardContent>
@@ -31,7 +31,7 @@
                     <HeaderContent>
                         <MudTh>Nr</MudTh>
                         <MudTh>Descripcion</MudTh>
-                        <MudTh>Funcion</MudTh>
+                        <MudTh>codigo</MudTh>
                         <MudTh>Opciones</MudTh>
                     </HeaderContent>
 

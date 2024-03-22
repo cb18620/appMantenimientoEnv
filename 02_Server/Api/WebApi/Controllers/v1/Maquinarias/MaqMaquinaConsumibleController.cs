@@ -1,4 +1,5 @@
-﻿using Aplicacion.Features.Maquinarias.Queries;
+﻿using Aplicacion.Features.Maquinarias.Commands;
+using Aplicacion.Features.Maquinarias.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -18,6 +19,19 @@ namespace WebApi.Controllers.v1.Maquinarias
             {
                 parametroComsumible = id
             }));
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Post(CreateMaqMaquinaConsumibleCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await Mediator.Send(new DeleteMaqMaquinaConsumibleCommand { IdmaqMaquinaConsumible = id }));
         }
     }
 }
