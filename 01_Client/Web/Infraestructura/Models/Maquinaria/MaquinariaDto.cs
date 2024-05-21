@@ -34,6 +34,8 @@ namespace Infraestructura.Models.Maquinaria
         public string Origen { get; set; }
         public string RecibidoDe { get; set; }
         public int Proceso { get; set; }
+        public int Supervision { get; set; }
+        public GenClasificador Supervisione { get; set; }
         public GenClasificador Procesos { get; set; }
         public bool VerDetalle { get; set; }
     }

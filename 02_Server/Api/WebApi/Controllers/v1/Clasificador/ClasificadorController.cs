@@ -53,5 +53,6 @@ namespace WebApi.Controllers.v1.Clasificador
             return Ok(await Mediator.Send(new GetAllClasificadorRcmQuery()));
 
         }
+     
     }
 }

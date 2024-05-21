@@ -8,6 +8,7 @@
 @using Syncfusion.Blazor.Popups
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
+@inject IDialogService DialogService
 
 
 <MudTabs Elevation="4" Rounded="true" Color="@Color.Dark" PrevIcon="@Icons.Material.Filled.SkipPrevious" NextIcon="@Icons.Material.Filled.SkipNext">
@@ -36,7 +37,15 @@
                                                     NameValue="IdgenClasificador"
                                                     NameDescripcion="Descripcion"
                                 @bind-DataValue="@_maquinarianuevo.Area"
-                                                    pPlaceHolder="SUPERVISIÓN" />
+                                                    pPlaceHolder="AREA" />
+                            </MudItem>
+                            <MudItem xs="12" sm="6" md="2">
+                                <CustomAutoComplete TItem="GenClasificadorDto"
+                                                    jsonData="@jsonSup"
+                                                    NameValue="IdgenClasificador"
+                                                    NameDescripcion="Descripcion"
+                                @bind-DataValue="@_maquinarianuevo.Supervision"
+                                                    pPlaceHolder="SUPERVISION" />
                             </MudItem>
                             <MudItem xs="12" sm="6" md="2">
                                 <CustomAutoComplete TItem="GenClasificadorDto"
@@ -95,7 +104,7 @@
                                         <img src="@ImageBase64" alt="Vista previa" style="max-width: 100px; margin-left: 10px;" />
                                     }
                                 </div>
-                            </MudItem>
+                            </MudItem> 
                              
                             <MudItem xs="12" sm="6" md="2">
                             <MudTextField @bind-Value="_maquinarianuevo.Descripcion" For="@(() => _maquinarianuevo.Descripcion)" Label="DESCRIPCION" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
@@ -132,19 +141,28 @@
                         <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.NombreMaquina)">Maquina</MudTableSortLabel></MudTh>
                         <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Criticidad)">Criticidad</MudTableSortLabel></MudTh>
                         <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Totalimpacto)">Nivel</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Tipo)">Tipo</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.DesTipo)">Tipo</MudTableSortLabel></MudTh>
                         <MudTd>Identificador</MudTd>
-                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Area)">Area</MudTableSortLabel></MudTh>
                         <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x=>x.Proceso)">Proceso</MudTableSortLabel></MudTh>
-                       
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.DesArea)">DesArea</MudTableSortLabel></MudTh>
                         <MudTd>Foto</MudTd>
+                        <!-- Columnas adicionales menos importantes -->
                         
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Marca)">Marca</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Modelo)">Modelo</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Ubicacion)">Ubicacion</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Funcion)">Funcion</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.NSerie)">NSerie</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Año)">Año</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Industria)">Industria</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Proveedor)">Proveedor</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Descripcion)">Descripcion</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Caracteristicas)">Caracteristicas</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqvImpactoRcmDto, object>(x => x.Origen)">Origen</MudTableSortLabel></MudTh>
                         <MudTh class="sobreponer">  Opciones</MudTh>
                     </HeaderContent>
 
                     <RowTemplate>
-
-
                         <MudTd>
                             <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
                         </MudTd>
@@ -172,7 +190,6 @@
                                 <MudText> Sin Análisis </MudText>
                             }
                         </MudTd>
-
                         <MudTd>
                             <MudText Typo="Typo.caption">@context.Totalimpacto</MudText><br />
                         </MudTd>
@@ -183,15 +200,52 @@
                             <MudText Typo="Typo.caption">@context.Identificador</MudText><br />
                         </MudTd>
                         <MudTd>
-                            <MudText Typo="Typo.caption">@context.DesArea</MudText><br />
-                        </MudTd>
-                        <MudTd>
                             <MudText Typo="Typo.caption">@context.DesProceso</MudText><br />
                         </MudTd>
-
                         <MudTd>
-                            <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
+                            <MudText Typo="Typo.caption">@context.DesArea</MudText><br />
                         </MudTd>
+                      
+                        <MudTd>
+                            <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialogContext(context.FotoEquipo)))">
+                                <MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" />
+                            </div>
+                        </MudTd>
+                        
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Marca</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Modelo</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Ubicacion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Funcion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.NSerie</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Año</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Industria</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Proveedor</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Descripcion</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Caracteristicas</MudText><br />
+                        </MudTd>
+                        <MudTd>
+                            <MudText Typo="Typo.caption">@context.Origen</MudText><br />
+                        </MudTd>
+
                       
 
                         <MudTd class="sobreponer">
@@ -234,9 +288,7 @@
                         @if (context.VerDetalle)
                         {
                             <MudTr>
-                                <td colspan="5" style="padding:1px; margin:1px">
-
-
+                                <td colspan="10" style="padding:1px; margin:1px">
                                     <MudCard>
                                         <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
                                             <CardHeaderContent>
@@ -244,34 +296,97 @@
                                             </CardHeaderContent>
                                         </MudCardHeader>
                                         <MudCardContent Class="pa-2">
-                                            <MudGrid>                                  
-                                                <MudItem xs="12" sm="6" md="4">
-                                                    <MudTextField @bind-Value="context.Modelo" Label="Modelo" Variant="Variant.Text"></MudTextField>
+                                            <MudGrid>
+
+
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.NombreMaquina" Label="Nombre" Variant="Variant.Text"></MudTextField>
                                                 </MudItem>
-                                                <MudItem xs="12" sm="6" md="4">
-                                                    <MudTextField @bind-Value="context.Identificador" Label="Identificador" Variant="Variant.Text"></MudTextField>
-                                                </MudItem>                                          
-                                                <MudItem xs="12" sm="6" md="4">
-                                                    <MudTextField @bind-Value="context.Marca" Label="Marca" Variant="Variant.Text"></MudTextField>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <CustomAutoComplete TItem="GenClasificadorDto"
+                                                                        jsonData="@jsonTipoMaquina"
+                                                                        NameValue="IdgenClasificador"
+                                                                        NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@context.Tipo"
+                                                                        pPlaceHolder="SECCION" />
                                                 </MudItem>
-                                                <MudItem xs="12" sm="6" md="4">
-                                                    <MudTextField @bind-Value="context.Ubicacion" Label="Ubicacion" Variant="Variant.Text"></MudTextField>
+                                                
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <CustomAutoComplete TItem="GenClasificadorDto"
+                                                                        jsonData="@jsonColor"
+                                                                        NameValue="IdgenClasificador"
+                                                                        NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@context.Area"
+                                                                        pPlaceHolder="AREA" />
+                                                </MudItem>
+
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <CustomAutoComplete TItem="GenClasificadorDto"
+                                                                        jsonData="@jsonSup"
+                                                                        NameValue="IdgenClasificador"
+                                                                        NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maquinarianuevo.Supervision"
+                                                                        pPlaceHolder="SUPERVISION" />
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <CustomAutoComplete TItem="GenClasificadorDto"
+                                                                        jsonData="@jsonProceso"
+                                                                        NameValue="IdgenClasificador"
+                                                                        NameDescripcion="Descripcion"
+                                                    @bind-DataValue="@_maquinarianuevo.Proceso"
+                                                                        pPlaceHolder="PROCESO" />
                                                 </MudItem>
                                                 <MudItem xs="12" sm="6" md="2">
                                                     <MudText Typo="Typo.caption" Style="margin-left:15px"><strong>Foto</strong></MudText>
                                                     <div class="d-flex align-items-center w-100">
-                                                        <InputFile id="fileInput" OnChange="@((e) => OnFileChange(_maquinarianuevo, e))" hidden multiple accept=".jpg, .jpeg, .png" maxFileSize="5242880" />
-                                                        <MudButton HtmlTag="label" EndIcon="@Icons.Material.Filled.PhotoCamera" Color="Color.Primary" Variant="Variant.Outlined" for="fileInput" FullWidth="true">
+                                                        <InputFile id="editFileInput" OnChange="@((e) => OnFileChange(context, e))" hidden multiple accept=".jpg, .jpeg, .png" maxFileSize="5242880" />
+                                                        <MudButton HtmlTag="label" EndIcon="@Icons.Material.Filled.PhotoCamera" Color="Color.Primary" Variant="Variant.Outlined" for="editFileInput" FullWidth="true">
                                                             SUBIR FOTO
                                                         </MudButton>
 
-                                                        @if (!string.IsNullOrEmpty(ImageBase64))
+                                                        @if (!string.IsNullOrEmpty(context.FotoEquipo))
                                                         {
-                                                            <img src="@ImageBase64" alt="Vista previa" style="max-width: 100px; margin-left: 10px;" />
+                                                            <img src="@($"data:image;base64,{context.FotoEquipo}")" alt="Vista previa" style="max-width: 100px; margin-left: 10px;" />
                                                         }
                                                     </div>
                                                 </MudItem>
 
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Identificador" Label="Identificador" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Marca" Label="Marca" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Modelo" Label="Modelo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Caracteristicas" Label="Caracteristicas" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Ubicacion" Label="Ubicacion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Funcion" Label="Funcion" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.NSerie" Label="NSerie" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Año" Label="Año" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Fabricante" Label="Fabricante" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Industria" Label="industria" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Proveedor" Label="Proveedor" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="2">
+                                                    <MudTextField @bind-Value="context.Origen" Label="Origen" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
                                             </MudGrid>
                                         </MudCardContent>
                                         <MudCardActions>
@@ -285,11 +400,11 @@
                                             </MudGrid>
                                         </MudCardActions>
                                     </MudCard>
-
                                 </td>
                             </MudTr>
                         }
                     </ChildRowContent>
+
                 </MudTable>
 
             </MudCard>
@@ -1181,8 +1296,60 @@
         DE COTIZACION *@
         @* TERMINA AGREGAR DETALLE*@
     </MudTabPanel>
-    <MudTabPanel Text="">
+    <MudTabPanel Text="ver get">
+        <MudCard>
+            <MudTable Items="@GetListMaquinaria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+                <ToolBarContent>
+                    <MudSpacer />                 
+                </ToolBarContent>
+                <HeaderContent>
+                    <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.Idmaquinaria)">N°</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<MaquinariaDto, object>(x=>x.NombreMaquina)">Maquina</MudTableSortLabel></MudTh>
+                    <MudTd>Identificador</MudTd>
 
+
+                    <MudTd>Foto</MudTd>
+
+                    <MudTh class="sobreponer">  Opciones</MudTh>
+                </HeaderContent>
+
+                <RowTemplate>
+
+
+                    <MudTd>
+                        <MudText Typo="Typo.caption">@context.Idmaquinaria</MudText><br />
+                    </MudTd>
+                    <MudTd>
+                        <MudText Typo="Typo.caption">@context.NombreMaquina</MudText><br />
+                    </MudTd>          
+
+                    <MudTd>
+                        <MudText Typo="Typo.caption">@context.Identificador</MudText><br />
+                    </MudTd>
+  
+
+                    <MudTd>
+                        <div @onclick="@(EventCallback.Factory.Create(this, () => OpenImageDialog(context.FotoEquipo)))"><MudImage Src="@((context.FotoEquipo) == null ? "" : "data:image;base64," + context.FotoEquipo)" Height="35" Style="margin:0 !important;" Elevation="25" Class="rounded my-2" /></div>
+                    </MudTd>
+
+
+                    <MudTd class="sobreponer">
+
+                        <div class="d-flex">
+                            <div class="m-auto">                            
+                                <MudTooltip Text="Imprimir " Color="Color.Dark" Placement="Placement.Top">
+                                    <MudIconButton Color="Color.Dark" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Print" Size="Size.Small" OnClick="@(() => repjasper( context.Idmaquinaria))" /><MudText Typo="Typo.caption"></MudText>
+                                </MudTooltip>
+                            </div>
+                        </div>
+                    </MudTd>
+                </RowTemplate>
+
+               
+
+            </MudTable>
+
+        </MudCard>
     </MudTabPanel>
 </MudTabs>
 
@@ -1227,8 +1394,9 @@
     {
         var parameters = new DialogParameters { ["ImageSrc"] = "data:image;base64," + foto };
         var options = new DialogOptions { CloseOnEscapeKey = true, DisableBackdropClick = false };
-        DialogService.Show<PgDialog>($"Foto Equipo", parameters, options);
+        DialogService.Show<PgDialog>("Foto Equipo", parameters, options);
     }
+
     private void NavigateToElementoPage(int idmaquinaElemento)
     {
         // Navega a la página deseada y pasa el ID como un parámetro si es necesario

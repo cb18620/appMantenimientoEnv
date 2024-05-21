@@ -33,5 +33,7 @@ namespace WebApi.Controllers.v1.Maquinarias
         {
             return Ok(await Mediator.Send(new DeleteMaqMaquinaConsumibleCommand { IdmaqMaquinaConsumible = id }));
         }
+
+        
     }
 }

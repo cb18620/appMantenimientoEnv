@@ -1,4 +1,5 @@
 ﻿@page "/Maquinaria/elemento"
+@using Infraestructura.Models.Maquinaria;
 @inherits MainBaseComponent
 @layout MainLayout
 @inject IJSRuntime JSRuntime
@@ -29,9 +30,9 @@
             <MudCard>
                 <MudTable Items="@maqElementos" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                     <HeaderContent>
-                        <MudTh>Nr</MudTh>
-                        <MudTh>Descripcion</MudTh>
-                        <MudTh>codigo</MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqElementoDto, object>(x=>x.Idelemento)">N°</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqElementoDto, object>(x=>x.Descripcion)">Descripcion</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqElementoDto, object>(x=>x.Funcion)">Funcion</MudTableSortLabel></MudTh>
                         <MudTh>Opciones</MudTh>
                     </HeaderContent>
 
@@ -138,9 +139,10 @@
             <MudCard>
                 <MudTable Items="@ListRepuestos" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
                     <HeaderContent>
-                        <MudTh>Nr</MudTh>
-                        <MudTh>Descripcion</MudTh>
-                        <MudTh>Cantidad</MudTh>
+
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqRepuestoDto, object>(x=>x.IdmaqRepuesto)">N°</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqRepuestoDto, object>(x=>x.Detalle)">Detalle</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqRepuestoDto, object>(x=>x.Cantidad)">Catidad</MudTableSortLabel></MudTh>
                         <MudTh>Codigo</MudTh>
                         <MudTh>Opciones</MudTh>
                     </HeaderContent>
@@ -163,7 +165,10 @@
 
                             <div class="d-flex">
                                 <div class="m-auto">
-                                 
+
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdiRep(context.IdmaqRepuesto))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
                                     <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
                                         <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarRepuesto(context.IdmaqRepuesto))" /><MudText Typo="Typo.caption"></MudText>
                                     </MudTooltip>
@@ -175,12 +180,59 @@
                             </div>
                         </MudTd>
                     </RowTemplate>
-                  
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="5" style="padding:1px; margin:1px">
+
+
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.IdmaqRepuesto</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Detalle" Label="Detalle" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Cantidad" Label="Cantidad" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Codigo" Label="Codigo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditRepuesto(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit(context.IdmaqRepuesto))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+
+                                </td>
+                            </MudTr>
+                        }
+                    </ChildRowContent>
               
                 </MudTable>
             </MudCard>
         </div>
     </MudTabPanel>
+
+
     <MudTabPanel Text="GESTION DE CONSUMIBLES">
         <div>
             <MudCard>
@@ -207,11 +259,11 @@
             </MudCard>
             <MudCard>
                 <MudTable Items="@ListConsumibles" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
-                    <HeaderContent>
-                        <MudTh>Nr</MudTh>
-                        <MudTh>Detalle</MudTh>
-                        <MudTh>Cantidad</MudTh>
-                        <MudTh>Codigo</MudTh>
+                    <HeaderContent>                
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqConsumibleDto, object>(x=>x.IdmaqConsumible)">N°</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqConsumibleDto, object>(x=>x.Detalle)">Detalle</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqConsumibleDto, object>(x=>x.Cantidad)">Cantidad</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MaqConsumibleDto, object>(x=>x.Codigo)">Codigo</MudTableSortLabel></MudTh>
                         <MudTh>Options</MudTh>
                        
                     </HeaderContent>
@@ -236,7 +288,9 @@
 
                             <div class="d-flex">
                                 <div class="m-auto">
-
+                                    <MudTooltip Text="Editar" Color="Color.Secondary" Placement="Placement.Top">
+                                        <MudIconButton Color="Color.Warning" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => ShowBtnEdiConsu(context.IdmaqConsumible))" /><MudText Typo="Typo.caption"></MudText>
+                                    </MudTooltip>
                                     <MudTooltip Text="Eliminar" Color="Color.Default" Placement="Placement.Top">
                                         <MudIconButton Color="Color.Error" Variant="Variant.Filled" Icon="@Icons.Material.Filled.DeleteForever" Size="Size.Small" OnClick="@(() => ShowBtnEliminarConsumible(context.IdmaqConsumible))" /><MudText Typo="Typo.caption"></MudText>
                                     </MudTooltip>
@@ -248,7 +302,52 @@
                             </div>
                         </MudTd>
                     </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <ChildRowContent>
+                        @if (context.VerDetalle)
+                        {
+                            <MudTr>
+                                <td colspan="5" style="padding:1px; margin:1px">
 
+
+                                    <MudCard>
+                                        <MudCardHeader Class="pt-2 pb-2" Style="background:#eaeaea">
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.caption"><strong>Registro Nro.:@context.IdmaqConsumible</strong></MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pa-2">
+                                            <MudGrid>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Detalle" Label="Detalle" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Cantidad" Label="Cantidad" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>  
+                                                <MudItem xs="12" sm="6" md="4">
+                                                    <MudTextField @bind-Value="context.Codigo" Label="Codigo" Variant="Variant.Text"></MudTextField>
+                                                </MudItem>
+
+                                            </MudGrid>
+                                        </MudCardContent>
+                                        <MudCardActions>
+                                            <MudGrid>
+                                                <MudItem Class="d-flex ml-auto">
+                                                    <div class="ml-2">
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="@(() => EditConsumible(context))">Guardar</MudButton>
+                                                        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="@(() => ShowBtnEdit(context.IdmaqConsumible))">Cancelar</MudButton>
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardActions>
+                                    </MudCard>
+
+                                </td>
+                            </MudTr>
+                        }
+                    </ChildRowContent>
 
                 </MudTable>
             </MudCard>

@@ -42,7 +42,8 @@ namespace Aplicacion.Features.Maquinarias.Queries
                     .ThenInclude(mme => mme.MaqElement)
                  .Include(a => a.Areas)
                  .Include(m => m.Tipos)
-                 .Include(pr => pr.Procesos);
+                 .Include(pr => pr.Procesos)
+                 .Include(dr => dr.Supervisione);
 
         }
     }

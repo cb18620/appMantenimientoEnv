@@ -63,5 +63,11 @@ namespace WebApi.Controllers.v1.Maquinarias
             return Ok(await Mediator.Send(new GetAllTipoQuery()));
 
         }
+        [HttpGet("supervicion")]
+        public async Task<IActionResult> GetlistaSupervicion()
+        {
+            return Ok(await Mediator.Send(new GetAllSupervicionQuery()));
+
+        }
     }
 }

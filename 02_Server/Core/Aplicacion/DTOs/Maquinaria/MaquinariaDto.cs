@@ -32,6 +32,8 @@ namespace Aplicacion.DTOs.Maquinaria
         public string Proveedor { get; set; }
         public string Origen { get; set; }
         public string RecibidoDe { get; set; }
+        public int Supervision { get; set; }
+        public GenClasificador Supervisione { get; set; }
         public int Proceso { get; set; }
         public GenClasificador Procesos { get; set; }
     }

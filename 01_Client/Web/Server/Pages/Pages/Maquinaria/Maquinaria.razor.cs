@@ -25,6 +25,7 @@ namespace Server.Pages.Pages.Maquinaria
         private static List<MaqCaractMaquinariaDto> listadetallesMaquinaria { get; set; }
         private static List<MaqImpactoRcmDto> listaImapctoRcm { get; set; }
         public static List<MaquinariaDto> maquinaria { get; set; }
+        public static List<MaquinariaDto> GetListMaquinaria { get; set; }
         public static List<MaqvImpactoRcmDto> ListVMaquinaria { get; set; }
 
         public MaqCaractVehiculoDto _maqCaractVehiculo = new MaqCaractVehiculoDto();
@@ -67,6 +68,7 @@ namespace Server.Pages.Pages.Maquinaria
         string _TituloPopup; string _TituloPopup1; int _TituloPopup2;
         private string searchString = "";
         public string jsonColor { get; set; }
+        public string jsonSup { get; set; }
         public string jsonProceso { get; set; }
         public string jsonTipoMaquina { get; set; }
         public string jsonElemento { get; set; }
@@ -81,6 +83,7 @@ namespace Server.Pages.Pages.Maquinaria
 
         private static List<GenClasificadorDto> AreaList { get; set; }
         private static List<GenClasificadorDto> procesosList { get; set; }
+        private static List<GenClasificadorDto> SupList { get; set; }
         private static List<GenClasificadorDto> TipoMaquinaList { get; set; }
         private static List<GenClasificadorDto> RcmClasificadorValorList { get; set; }
         private static List<ConfigImpactoDto> ConfigImpactoList { get; set; }
@@ -874,6 +877,22 @@ namespace Server.Pages.Pages.Maquinaria
             {
                 _MessageShow(e.Message, State.Error);
             }
+        } 
+        protected async Task GetSup()
+        {
+            try
+            {
+                var _result = await _Rest.GetAsync<List<GenClasificadorDto>>("Maquinaria/supervicion");
+                _Loading.Hide();
+                //_MessageShow(_result.Message, _result.State);
+                if (_result.State != State.Success)
+                    return;
+                SupList = _result.Data;
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
         }
         protected async Task GetProceso()
         {
@@ -962,12 +981,16 @@ namespace Server.Pages.Pages.Maquinaria
 
             //await onTablaAsyncMaquinas();
             await onTablaAsyncVmaquinas();
+            await onTablaAsyncGetmaquinas();
 
 
             await GetArea();
             jsonColor = System.Text.Json.JsonSerializer.Serialize(AreaList);
             await GetProceso();
             jsonProceso = System.Text.Json.JsonSerializer.Serialize(procesosList);
+
+            await GetSup();
+            jsonSup = System.Text.Json.JsonSerializer.Serialize(SupList);
 
             await GetTipoMaquinaria();
             jsonTipoMaquina = System.Text.Json.JsonSerializer.Serialize(TipoMaquinaList);
@@ -1000,7 +1023,32 @@ namespace Server.Pages.Pages.Maquinaria
 
 
 
-        protected async Task onTablaAsyncMaquinas()
+        //vISTA MAQUINARIA CON CRITICIDAD
+        protected async Task onTablaAsyncVmaquinas()
+        {
+            try
+            {
+                _Loading.Show();
+                var _result = await _Rest.GetAsync<List<MaqvImpactoRcmDto>>("VImpactoRcm/impacto");
+                _Loading.Hide();
+
+                if (_result.State != State.Success)
+                {
+                    _DialogShow(_result.Message, _result.State);
+                }
+                else
+                {
+                    // Ordenar la lista en orden descendente por una propiedad, por ejemplo, Idmaquinaria
+                    ListVMaquinaria = _result.Data.OrderByDescending(x => x.Idmaquinaria).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                _MessageShow(e.Message, State.Error);
+            }
+        }
+
+        protected async Task onTablaAsyncGetmaquinas()
         {
             try
             {
@@ -1012,28 +1060,7 @@ namespace Server.Pages.Pages.Maquinaria
                 {
                     _DialogShow(_result.Message, _result.State);
                 }
-                maquinaria = _result.Data;
-            }
-            catch (Exception e)
-            {
-                _MessageShow(e.Message, State.Error);
-            }
-        }
-
-        //vISTA MAQUINARIA CON CRITICIDAD
-        protected async Task onTablaAsyncVmaquinas()
-        {
-            try
-            {
-                _Loading.Show();
-                var _result = await _Rest.GetAsync<List<MaqvImpactoRcmDto>>("VImpactoRcm/impacto");
-
-                _Loading.Hide();
-                if (_result.State != State.Success)
-                {
-                    _DialogShow(_result.Message, _result.State);
-                }
-                ListVMaquinaria = _result.Data;
+                GetListMaquinaria = _result.Data;
             }
             catch (Exception e)
             {
@@ -1079,12 +1106,39 @@ namespace Server.Pages.Pages.Maquinaria
             try
             {
                 _Loading.Show();
-                var _update = await _Rest.PutAsync<int>("Maquinaria", dtoPersona, dtoPersona.Idmaquinaria);
+                var maquinariaDto = new MaquinariaDto
+                {
+                    Idmaquinaria = dtoPersona.Idmaquinaria,
+                    Descripcion = dtoPersona.Descripcion,
+                    NombreMaquina = dtoPersona.NombreMaquina,
+                    Modelo = dtoPersona.Modelo,
+                    Identificador = dtoPersona.Identificador,
+                    Area = dtoPersona.Area,
+                    Caracteristicas = dtoPersona.Caracteristicas,
+                    Marca = dtoPersona.Marca,
+                    Tipo = dtoPersona.Tipo,
+                    Ubicacion = dtoPersona.Ubicacion,
+                    FotoEquipo = dtoPersona.FotoEquipo,
+                    Año = dtoPersona.Año,
+                    EntregadoA = dtoPersona.EntregadoA,
+                    Funcion = dtoPersona.Funcion,
+                    NSerie = dtoPersona.NSerie,
+                    Fabricante = dtoPersona.Fabricante,
+                    Industria = dtoPersona.Industria,
+                    Proveedor = dtoPersona.Proveedor,
+                    Origen = dtoPersona.Origen,
+                    RecibidoDe = dtoPersona.RecibidoDe,
+                    Proceso = dtoPersona.Proceso,
+                    VerDetalle = dtoPersona.VerDetalle
+                };
+
+                var _update = await _Rest.PutAsync<int>("Maquinaria", maquinariaDto, maquinariaDto.Idmaquinaria);
                 if (_update.State == State.Success)
                 {
                     _MessageShow(_update.Message, _update.State);
                     dtoPersona.Idmaquinaria = _update.Data;
                     dtoPersona.VerDetalle = !dtoPersona.VerDetalle;
+                    await onTablaAsyncVmaquinas();
                 }
                 else
                 {
@@ -1100,7 +1154,19 @@ namespace Server.Pages.Pages.Maquinaria
                 _Loading.Hide();
             }
         }
-        public async Task ShowBtnEliminaPersona(int idPersona)
+      
+        protected void ShowBtnEditCancelPersona(int v_idpersona)
+        {
+            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
+            vpersona.VerDetalle = !vpersona.VerDetalle;
+        }
+        protected void ShowBtnEdit(int v_idpersona)
+        {
+            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
+            vpersona.VerDetalle = !vpersona.VerDetalle;
+        }
+
+          public async Task ShowBtnEliminaPersona(int idPersona)
         {
 
 
@@ -1120,17 +1186,6 @@ namespace Server.Pages.Pages.Maquinaria
                 }
             });
         }
-        protected void ShowBtnEditCancelPersona(int v_idpersona)
-        {
-            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
-            vpersona.VerDetalle = !vpersona.VerDetalle;
-        }
-        protected void ShowBtnEdit(int v_idpersona)
-        {
-            var vpersona = ListVMaquinaria.First(f => f.Idmaquinaria == v_idpersona);
-            vpersona.VerDetalle = !vpersona.VerDetalle;
-        }
-
         public async Task repjasper(int IdMaqMaquinaria)
         {
 
@@ -1203,6 +1258,53 @@ namespace Server.Pages.Pages.Maquinaria
             }
         }
 
+        public async Task OnFileChange(MaqvImpactoRcmDto context, InputFileChangeEventArgs e)
+        {
+            var files = e.GetMultipleFiles();
+
+            if (files != null && files.Count > 0)
+            {
+                var file = files[0];
+
+                const long maxFileSize = 7 * 1024 * 1024; // 7 MB
+
+                if (file != null)
+                {
+                    if (file.Size > maxFileSize)
+                    {
+                        _MessageShow("El archivo es demasiado grande. El tamaño máximo permitido es de 6 MB.", State.Warning);
+                    }
+                    else
+                    {
+                        _Loading.Show();
+                        using (var stream = file.OpenReadStream(maxFileSize))
+                        {
+                            using (var image = await Image.LoadAsync(stream))
+                            {
+                                const int maxImageWidth = 1200;
+                                const int maxImageHeight = 1200;
+
+                                image.Mutate(x => x.Resize(new ResizeOptions
+                                {
+                                    Size = new SixLabors.ImageSharp.Size(maxImageWidth, maxImageHeight),
+                                    Mode = ResizeMode.Max
+                                }));
+
+                                using (var memoryStream = new System.IO.MemoryStream())
+                                {
+                                    var encoder = new SixLabors.ImageSharp.Formats.Jpeg.JpegEncoder { Quality = 90 };
+                                    await image.SaveAsync(memoryStream, encoder);
+                                    context.FotoEquipo = Convert.ToBase64String(memoryStream.ToArray());
+                                    string base64Image = "data:image;base64," + context.FotoEquipo;
+                                    ImageBase64 = base64Image;
+                                }
+                            }
+                            _Loading.Hide();
+                        }
+                    }
+                }
+            }
+        }
         //----------------------- FIN SECCIÓN FILE UPLOAD -----------------------------
 
     }

@@ -29,5 +29,15 @@ namespace WebApi.Controllers.v1.Maquinarias
         {
             return Ok(await Mediator.Send(new DeleteMaqConsumibleCommand { IdmaqConsumible = id }));
         }
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Put(int id, UpdateMaqConsumibleCommand command)
+        {
+            if (id != command.IdmaqConsumible)
+            {
+                return BadRequest();
+            }
+            return Ok(await Mediator.Send(command));
+        }
     }
 }

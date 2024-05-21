@@ -109,6 +109,38 @@ namespace Server.Pages.Pages.Maquinaria
                 }
             });
         }
+
+        protected async Task EditConsumible(MaqConsumibleDto dtoConsaumible)
+        {
+            try
+            {
+                _Loading.Show();
+                var _update = await _Rest.PutAsync<int>("MaqConsumible", dtoConsaumible, dtoConsaumible.IdmaqConsumible);
+                if (_update.State == State.Success)
+                {
+                    _MessageShow(_update.Message, _update.State);
+                    dtoConsaumible.IdmaqConsumible = _update.Data;
+                    dtoConsaumible.VerDetalle = !dtoConsaumible.VerDetalle;
+                }
+                else
+                {
+                    _MessageShow(_update.Message, _update.State);
+                }
+            }
+            catch (Exception e)
+            {
+                _DialogShow(e.Message, State.Error);
+            }
+            finally
+            {
+                _Loading.Hide();
+            }
+        }
+        protected void ShowBtnEdiConsu(int v_idCons)
+        {
+            var vrConsum = ListConsumibles.First(f => f.IdmaqConsumible == v_idCons);
+            vrConsum.VerDetalle = !vrConsum.VerDetalle;
+        }
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  CONSUMIBLES FIN
 
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS INICIO
@@ -194,6 +226,38 @@ namespace Server.Pages.Pages.Maquinaria
                 }
             });
         }
+        protected async Task EditRepuesto(MaqRepuestoDto dtoElemento)
+        {
+            try
+            {
+                _Loading.Show();
+                var _update = await _Rest.PutAsync<int>("MaqRepuesto", dtoElemento, dtoElemento.IdmaqRepuesto);
+                if (_update.State == State.Success)
+                {
+                    _MessageShow(_update.Message, _update.State);
+                    dtoElemento.IdmaqRepuesto = _update.Data;
+                    dtoElemento.VerDetalle = !dtoElemento.VerDetalle;
+                }
+                else
+                {
+                    _MessageShow(_update.Message, _update.State);
+                }
+            }
+            catch (Exception e)
+            {
+                _DialogShow(e.Message, State.Error);
+            }
+            finally
+            {
+                _Loading.Hide();
+            }
+        }
+        protected void ShowBtnEdiRep(int v_idRepuesto)
+        {
+            var vrepuesto = ListRepuestos.First(f => f.IdmaqRepuesto == v_idRepuesto);
+            vrepuesto.VerDetalle = !vrepuesto.VerDetalle;
+        }
+
         //AGREGAR FUNCIONES DEL DETALLE DETALLE  REPUESTOS FIN
 
         protected async Task onTablaAsyncElemento()

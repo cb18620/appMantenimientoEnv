@@ -18,8 +18,6 @@ namespace Aplicacion.Features.ClasificadorTipo.Queries
 
     public class GetClasificadorAreaQuery : IRequest<Response<List<GenClasificadorDto>>>
     {
-
-
         public class GetAllAreaQueryHandler : IRequestHandler<GetClasificadorAreaQuery, Response<List<GenClasificadorDto>>>
         {
             private readonly IRepositoryAsync<GenClasificador> _repo;
@@ -54,7 +52,6 @@ namespace Aplicacion.Features.ClasificadorTipo.Queries
         }
 
     }
-
     public class GetClasificadorQuerySpecification : Specification<GenClasificador>
     {
         public GetClasificadorQuerySpecification()

@@ -28,5 +28,11 @@ namespace Aplicacion.DTOs.Vistas
         public string Proveedor { get; set; }
         public decimal Totalimpacto { get; set; }
         public string Criticidad { get; set; }
+        public string Descripcion { get; set; }
+        public string Caracteristicas { get; set; }
+        public string Fabricante { get; set; }
+        public string Origen { get; set; }
+        public string RecibidoDe { get; set; }
+        public string EntregadoA { get; set; }
     }
 }

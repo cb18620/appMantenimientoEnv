@@ -33,6 +33,9 @@ namespace Dominio.Entities
         public string Proveedor { get; set; }
         public string Origen { get; set; }
         public string RecibidoDe { get; set; }
+        public int Supervision { get; set; }
+        [ForeignKey("Supervision")]
+        public GenClasificador Supervisione { get; set; }
         public int Proceso { get; set; }
         [ForeignKey("Proceso")]
         public GenClasificador Procesos { get; set; }

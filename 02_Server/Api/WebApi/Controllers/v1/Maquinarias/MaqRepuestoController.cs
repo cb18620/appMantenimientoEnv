@@ -24,11 +24,24 @@ namespace WebApi.Controllers.v1.Maquinarias
         {
             return Ok(await Mediator.Send(command));
         }
+
+
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteMaqRepuestoCommand { IdmaqRepuesto = id }));
+        }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Put(int id, UpdateMaqRepuestoCommand command)
+        {
+            if (id != command.IdmaqRepuesto)
+            {
+                return BadRequest();
+            }
+            return Ok(await Mediator.Send(command));
         }
     }
 }

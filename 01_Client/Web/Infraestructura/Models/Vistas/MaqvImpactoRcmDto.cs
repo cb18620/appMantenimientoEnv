@@ -18,7 +18,7 @@ namespace Infraestructura.Models.Vistas
         public string Ubicacion { get; set; }
         public string FotoEquipo { get; set; }
         public string DesTipo { get; set; }
-        public int? Tipo { get; set; }
+        public int Tipo { get; set; }
         public int Proceso { get; set; }
         public string DesProceso { get; set; }
         public string Funcion { get; set; }
@@ -28,6 +28,13 @@ namespace Infraestructura.Models.Vistas
         public string Proveedor { get; set; }
         public decimal Totalimpacto { get; set; }
         public string Criticidad { get; set; }
-        public bool VerDetalle {  get; set; }   
+        public string Descripcion { get; set; }
+        public string Caracteristicas { get; set; }
+        public string Fabricante { get; set; }
+        public string Origen { get; set; }
+        public string RecibidoDe { get; set; }
+        public string EntregadoA { get; set; }
+        public bool VerDetalle {  get; set; }  
+        
     }
 }

@@ -16,8 +16,7 @@
         proceso =4, 
         tipoMaquinaria =5,
         rcm = 6,
-
-
+        supervision =7
     }
 
     public enum TipoPlanilla
